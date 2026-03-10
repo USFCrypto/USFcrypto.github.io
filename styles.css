@@ -81,6 +81,17 @@ nav a { color: #24414b; }
   padding: 1.25rem 0; border-top: 1px solid var(--line);
 }
 .topic-row img { width: 100%; border-radius: 18px; aspect-ratio: 16/10; object-fit: cover; }
+.topic-row.reverse {
+  grid-template-columns: 1fr 280px;
+}
+
+.topic-row.reverse img {
+  order: 2;
+}
+
+.topic-row.reverse > div {
+  order: 1;
+}
 .people-grid .person-card { padding: 1rem; }
 .person-card img { width: 100%; aspect-ratio: 4/5; object-fit: cover; border-radius: 16px; margin-bottom: 1rem; }
 .program-list { display: grid; gap: 1rem; }
