@@ -1,53 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
   <title>Research | USF Cryptography Center</title>
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-  <header class="site-header compact">
-    <div class="container nav">
-      <a class="brand" href="index.html">
-        <img src="assets/images/logo.png" alt="USF Cryptography Center logo" />
-        <span>USF Cryptography Center</span>
-      </a>
-      <nav>
-        <a href="research.html">Research</a>
-        <a href="people.html">People</a>
-        <a href="programs.html">Programs</a>
-      </nav>
+
+<header class="site-header compact">
+  <div class="container nav">
+    <div class="brand">
+      <img src="assets/images/logo-CR-transparent.png" alt="USF Cryptography Center logo">
+      <span>USF Cryptography Center</span>
     </div>
-  </header>
-  <main class="container content-page">
-    <p class="eyebrow green">Research</p>
-    <h1>Research at the USF Crypto Center</h1>
-    <p class="intro">This page shows the quieter academic style for inner pages: simple headings, readable text, and a few visual anchors.</p>
 
-    <section id="pqc" class="topic-row">
-      <img src="assets/images/pqc.jpg" alt="Post-quantum cryptography" />
-      <div>
-        <h2>Post-Quantum Cryptography</h2>
-        <p>Research topics include lattices, coding theory, isogeny-based cryptography, and rigorous security foundations for cryptographic systems expected to remain secure in the presence of quantum computers.</p>
-      </div>
-    </section>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="research.html">Research</a>
+      <a href="people.html">People</a>
+      <a href="programs.html">Programs</a>
+      <a href="seminars.html">Seminars</a>
+      <a href="news.html">News</a>
+    </nav>
+  </div>
+</header>
 
-    <section id="applied" class="topic-row">
-      <img src="assets/images/applied.jpg" alt="Applied cryptography" />
-      <div>
-        <h2>Applied Cryptography</h2>
-        <p>Work in applied cryptography spans protocol design, secure systems, implementation issues, and the bridge between theoretical cryptography and practice.</p>
-      </div>
-    </section>
 
-    <section id="hardware" class="topic-row">
-      <img src="assets/images/hardware.jpg" alt="Hardware security" />
-      <div>
-        <h2>Hardware and Embedded Security</h2>
-        <p>The center also connects with systems and hardware security, including embedded cryptography and implementation-aware defenses.</p>
-      </div>
-    </section>
-  </main>
+<main class="content-page container">
+
+<h1>Research</h1>
+
+<p class="intro">
+The Center for Cryptographic Research advances fundamental and applied work in modern
+cryptography, coding theory, and quantum information. Our research spans theoretical
+foundations, post-quantum security, and practical cryptographic systems, bringing together
+faculty and students from mathematics, computer science, and related disciplines.
+</p>
+
+
+<!-- Post-Quantum Cryptography -->
+
+<div class="topic-row">
+  <img src="assets/images/lattice.jpg" alt="Post-Quantum Cryptography">
+
+  <div>
+    <h3>Post-Quantum Cryptography</h3>
+
+    <p>
+    Post-quantum cryptography studies cryptographic systems that remain secure in the
+    presence of quantum adversaries. Research at the center explores lattice-based
+    cryptography, code-based cryptography, and other constructions designed to provide
+    strong security guarantees against quantum attacks.
+    </p>
+
+    <p><strong>Topics include:</strong></p>
+
+    <ul>
+      <li>Lattice-based cryptography</li>
+      <li>Code-based cryptography</li>
+      <li>Isogeny-based cryptography</li>
+      <li>Cryptographic hardness assumptions</li>
+    </ul>
+  </div>
+</div>
+
+
+<!-- Coding Theory -->
+
+<div class="topic-row">
+  <img src="assets/images/coding.jpg" alt="Coding Theory">
+
+  <div>
+    <h3>Coding Theory</h3>
+
+    <p>
+    Coding theory studies the structure and properties of error-correcting codes.
+    Research at the center investigates both theoretical and computational aspects
+    of codes, including their applications to cryptography and secure communication.
+    </p>
+
+    <p><strong>Topics include:</strong></p>
+
+    <ul>
+      <li>Error-correcting codes</li>
+      <li>Algebraic coding theory</li>
+      <li>Code equivalence problems</li>
+      <li>Cryptographic applications of codes</li>
+    </ul>
+  </div>
+</div>
+
+
+<!-- Quantum Information -->
+
+<div class="topic-row">
+  <img src="assets/images/quantum.jpg" alt="Quantum Information">
+
+  <div>
+    <h3>Quantum Information</h3>
+
+    <p>
+    Quantum information science studies the use of quantum mechanical systems for
+    computation, communication, and cryptography. Research at the Center for
+    Cryptographic Research explores the algorithmic and theoretical foundations of
+    quantum computation and their implications for information security.
+    </p>
+
+    <p><strong>Topics include:</strong></p>
+
+    <ul>
+      <li>Quantum algorithms and complexity</li>
+      <li>Quantum cryptography</li>
+      <li>Quantum information theory</li>
+      <li>Quantum field theory</li>
+    </ul>
+  </div>
+</div>
+
+
+<!-- Applied Cryptography -->
+
+<div class="topic-row">
+  <img src="assets/images/applied.jpg" alt="Applied Cryptography">
+
+  <div>
+    <h3>Applied Cryptography</h3>
+
+    <p>
+    Applied cryptography focuses on designing and analyzing cryptographic systems
+    used in real-world applications. This includes protocols for secure communication,
+    authentication, privacy protection, and distributed systems.
+    </p>
+
+    <p><strong>Topics include:</strong></p>
+
+    <ul>
+      <li>Secure communication protocols</li>
+      <li>Cryptographic implementations</li>
+      <li>Privacy-enhancing technologies</li>
+      <li>Blockchain and distributed systems</li>
+    </ul>
+  </div>
+</div>
+
+</main>
+
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <span>© Center for Cryptographic Research</span>
+    <span>University of South Florida</span>
+  </div>
+</footer>
+
 </body>
 </html>
