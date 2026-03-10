@@ -75,9 +75,9 @@ nav a { color: #24414b; }
 .site-footer { border-top: 1px solid var(--line); padding: 1.5rem 0; color: var(--muted); }
 .footer-inner { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
 .content-page { padding: 4rem 0 5rem; }
-.intro { max-width: 45rem; margin-bottom: 2rem; }
+.intro { margin-bottom: 2rem; }
 .topic-row {
-  display: grid; grid-template-columns: 280px 1fr; gap: 1.5rem; align-items: center;
+  display: grid; grid-template-columns: 420px 1fr; gap: 1.5rem; align-items: center;
   padding: 1.25rem 0; border-top: 1px solid var(--line);
 }
 .topic-row img { width: 100%; border-radius: 18px; aspect-ratio: 16/10; object-fit: cover; }
