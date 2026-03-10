@@ -82,7 +82,7 @@ nav a { color: #24414b; }
 }
 .topic-row img { width: 100%; border-radius: 18px; aspect-ratio: 16/10; object-fit: cover; }
 .topic-row.reverse {
-  grid-template-columns: 1fr 280px;
+  grid-template-columns: 1fr 420px;
 }
 
 .topic-row.reverse img {
