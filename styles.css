@@ -97,6 +97,21 @@ nav a { color: #24414b; }
 .person-card img { width: 100%; aspect-ratio: 4/5; object-fit: cover; border-radius: 16px; margin-bottom: 1rem; }
 .program-list { display: grid; gap: 1rem; }
 .program-item { border-top: 1px solid var(--line); padding: 1.2rem 0; }
+.people-grid {
+  align-items: start;
+}
+
+.person-card {
+  padding: 1rem;
+}
+
+.person-card h3 {
+  margin-top: 0.25rem;
+}
+
+.person-card p {
+  margin: 0.45rem 0;
+}
 @media (max-width: 1024px) {
   .card-grid.four { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
