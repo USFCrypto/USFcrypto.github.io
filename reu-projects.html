@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>Past REU Projects | USF Cryptography Center</title>
   <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 
 <body>
@@ -45,26 +46,37 @@
     <div class="program-list">
 
       <div class="mini-card">
-        <h3>Project Title Placeholder</h3>
-        <p><strong>Mentor(s):</strong> Faculty Name</p>
-        <p><strong>Student(s):</strong> Student Name(s)</p>
-        <p>
-          This project investigated a topic in cryptography or coding theory. This paragraph will eventually
-          contain a concise 8–10 line description summarizing the problem, the techniques explored,
-          and the main outcome of the student research project.
-        </p>
-      </div>
+        <h3>Classifying Rational Functions over Finite Fields</h3>
 
-      <div class="mini-card">
-        <h3>Project Title Placeholder</h3>
-        <p><strong>Mentor(s):</strong> Faculty Name</p>
-        <p><strong>Student(s):</strong> Student Name(s)</p>
+        <p><strong>Mentor:</strong> Xiang-Dong Hou</p>
+        <p><strong>Participants:</strong> Siyu Peng (MIT), Yongyu Qiang (Georgia Tech)</p>
+
         <p>
-          This second placeholder card shows how multiple project summaries can be grouped within one year.
-          Once you send me project papers or summaries, I can write polished one-paragraph descriptions
-          for each entry.
+        Finite fields are central objects in modern cryptography and coding theory.
+        In this project, students studied functions
+        \( f : \mathbb{F}_q \rightarrow \mathbb{F}_q \)
+        and how their properties behave under algebraic transformations.
         </p>
-      </div>
+
+        <p>
+        A key quantity in cryptography is the <em>differential uniformity</em>
+        \[
+        \delta(f) =
+        \max_{a,b \in \mathbb{F}_q,\, a\neq 0}
+        \left|\{x \in \mathbb{F}_q : f(x+a)-f(x)=b\}\right|.
+        \]
+        Functions with small values of \( \delta(f) \) are resistant to differential
+        cryptanalysis and appear in the design of secure block ciphers.
+        </p>
+
+        <p>
+        The project explored the classification of low-degree rational functions under
+        transformations of the projective linear group \( \mathrm{PGL}(2,\mathbb{F}_q) \),
+        with the goal of identifying canonical representatives of each equivalence
+        class and studying their cryptographic properties.
+        </p>
+
+        </div>
 
     </div>
   </section>
