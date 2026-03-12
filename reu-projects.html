@@ -76,6 +76,44 @@
         class and studying their cryptographic properties.
         </p>
 
+      </div>
+
+    <div class="mini-card">
+
+        <h3>Climbing the Clifford Hierarchy</h3>
+
+        <p><strong>Mentor:</strong> Tefjol Pllaha</p>
+
+        <p><strong>Participants:</strong> Samuel Glandon (University of Tennessee Chattanooga), Madison Stewart (University of Texas Austin)</p>
+
+        <p>
+        Fault-tolerant quantum computation relies on a special family of quantum gates known as the
+        <strong>Clifford hierarchy</strong>. These gates determine which operations can be implemented reliably
+        on quantum computers protected by error-correcting codes. In this project, students studied the
+        structure of this hierarchy and investigated when certain quantum gates can be lifted to higher
+        levels by taking square roots.
+        </p>
+
+        <p>
+        The hierarchy is defined recursively: the first level is the Pauli group and higher levels
+        contain unitaries that conjugate Pauli operators to lower levels,
+        \[
+        C^{(1)}_n = \mathcal{P}_n, \qquad
+        C^{(k)}_n = \{\, U \mid U P U^\dagger \in C^{(k-1)}_n \ \text{for all } P \in \mathcal{P}_n \,\}.
+        \]
+        Understanding the structure of these levels is central to the theory of
+        fault-tolerant quantum computation.
+        </p>
+
+        <p>
+        The students analyzed when taking square roots of Clifford gates allows one to
+        “climb” the hierarchy and proved new structural results characterizing when this
+        phenomenon occurs. Their work combines algebraic methods, symplectic geometry,
+        and quantum circuit theory, and culminated in a research paper on the structure
+        of the Clifford hierarchy and its implications for implementing quantum gates
+        in fault-tolerant architectures. :contentReference[oaicite:0]{index=0}
+        </p>
+
         </div>
 
     </div>
