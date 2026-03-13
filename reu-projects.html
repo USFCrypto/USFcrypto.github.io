@@ -45,74 +45,114 @@
 
     <div class="program-list">
 
-      <div class="mini-card">
-        <h3>Classifying Rational Functions over Finite Fields</h3>
+        <div class="mini-card">
+            <h3>Classifying Rational Functions over Finite Fields</h3>
 
-        <p><strong>Mentor:</strong> Xiang-Dong Hou</p>
-        <p><strong>Participants:</strong> Siyu Peng (MIT), Yongyu Qiang (Georgia Tech)</p>
+            <p><strong>Mentor:</strong> Xiang-Dong Hou</p>
+            <p><strong>Participants:</strong> Siyu Peng (MIT), Yongyu Qiang (Georgia Tech)</p>
 
-        <p>
-        Finite fields are central objects in modern cryptography and coding theory.
-        In this project, students studied functions
-        \( f : \mathbb{F}_q \rightarrow \mathbb{F}_q \)
-        and how their properties behave under algebraic transformations.
-        </p>
+            <p>
+            Finite fields are central objects in modern cryptography and coding theory.
+            In this project, students studied functions
+            \( f : \mathbb{F}_q \rightarrow \mathbb{F}_q \)
+            and how their properties behave under algebraic transformations.
+            </p>
 
-        <p>
-        A key quantity in cryptography is the <em>differential uniformity</em>
-        \[
-        \delta(f) =
-        \max_{a,b \in \mathbb{F}_q,\, a\neq 0}
-        \left|\{x \in \mathbb{F}_q : f(x+a)-f(x)=b\}\right|.
-        \]
-        Functions with small values of \( \delta(f) \) are resistant to differential
-        cryptanalysis and appear in the design of secure block ciphers.
-        </p>
+            <p>
+            A key quantity in cryptography is the <em>differential uniformity</em>
+            \[
+            \delta(f) =
+            \max_{a,b \in \mathbb{F}_q,\, a\neq 0}
+            \left|\{x \in \mathbb{F}_q : f(x+a)-f(x)=b\}\right|.
+            \]
+            Functions with small values of \( \delta(f) \) are resistant to differential
+            cryptanalysis and appear in the design of secure block ciphers.
+            </p>
 
-        <p>
-        The project explored the classification of low-degree rational functions under
-        transformations of the projective linear group \( \mathrm{PGL}(2,\mathbb{F}_q) \),
-        with the goal of identifying canonical representatives of each equivalence
-        class and studying their cryptographic properties.
-        </p>
+            <p>
+            The project explored the classification of low-degree rational functions under
+            transformations of the projective linear group \( \mathrm{PGL}(2,\mathbb{F}_q) \),
+            with the goal of identifying canonical representatives of each equivalence
+            class and studying their cryptographic properties.
+            </p>
 
-      </div>
+        </div>
 
-    <div class="mini-card">
+        <div class="mini-card">
 
-        <h3>Climbing the Clifford Hierarchy</h3>
+            <h3>Climbing the Clifford Hierarchy</h3>
 
-        <p><strong>Mentor:</strong> Tefjol Pllaha</p>
+            <p><strong>Mentor:</strong> Tefjol Pllaha</p>
 
-        <p><strong>Participants:</strong> Samuel Glandon (University of Tennessee Chattanooga), Madison Stewart (University of Texas Austin)</p>
+            <p><strong>Participants:</strong> Samuel Glandon (University of Tennessee Chattanooga), Madison Stewart (University of Texas Austin)</p>
 
-        <p>
-        Fault-tolerant quantum computation relies on a special family of quantum gates known as the
-        <strong>Clifford hierarchy</strong>. These gates determine which operations can be implemented reliably
-        on quantum computers protected by error-correcting codes. In this project, students studied the
-        structure of this hierarchy and investigated when certain quantum gates can be lifted to higher
-        levels by taking square roots.
-        </p>
+            <p>
+            Fault-tolerant quantum computation relies on a special family of quantum gates known as the
+            <strong>Clifford hierarchy</strong>. These gates determine which operations can be implemented reliably
+            on quantum computers protected by error-correcting codes. In this project, students studied the
+            structure of this hierarchy and investigated when certain quantum gates can be lifted to higher
+            levels by taking square roots.
+            </p>
 
-        <p>
-        The hierarchy is defined recursively: the first level is the Pauli group and higher levels
-        contain unitaries that conjugate Pauli operators to lower levels,
-        \[
-        C^{(1)}_n = \mathcal{P}_n, \qquad
-        C^{(k)}_n = \{\, U \mid U P U^\dagger \in C^{(k-1)}_n \ \text{for all } P \in \mathcal{P}_n \,\}.
-        \]
-        Understanding the structure of these levels is central to the theory of
-        fault-tolerant quantum computation.
-        </p>
+            <p>
+            The hierarchy is defined recursively: the first level is the Pauli group and higher levels
+            contain unitaries that conjugate Pauli operators to lower levels,
+            \[
+            C^{(1)}_n = \mathcal{P}_n, \qquad
+            C^{(k)}_n = \{\, U \mid U P U^\dagger \in C^{(k-1)}_n \ \text{for all } P \in \mathcal{P}_n \,\}.
+            \]
+            Understanding the structure of these levels is central to the theory of
+            fault-tolerant quantum computation.
+            </p>
 
-        <p>
-        The students analyzed when taking square roots of Clifford gates allows one to
-        “climb” the hierarchy and proved new structural results characterizing when this
-        phenomenon occurs. Their work combines algebraic methods, symplectic geometry,
-        and quantum circuit theory, and culminated in a research paper on the structure
-        of the Clifford hierarchy and its implications for implementing quantum gates
-        in fault-tolerant architectures. :contentReference[oaicite:0]{index=0}
-        </p>
+            <p>
+            The students analyzed when taking square roots of Clifford gates allows one to
+            “climb” the hierarchy and proved new structural results characterizing when this
+            phenomenon occurs. Their work combines algebraic methods, symplectic geometry,
+            and quantum circuit theory, and culminated in a research paper on the structure
+            of the Clifford hierarchy and its implications for implementing quantum gates
+            in fault-tolerant architectures. 
+            </p>
+
+        </div>
+
+        <div class="mini-card">
+
+          <h3>Group-Based Cryptography and Automaton Groups</h3>
+
+            <p><strong>Mentor:</strong> Dmytro Savchuk<br>
+            <strong>Participants:</strong> Fahran Bajaj (University of Maryland College Park),
+            Winona Wherley (Grove City College)</p>
+
+            <p>
+            This project explored cryptographic constructions based on
+            <em>non-abelian groups</em>. While many classical cryptographic protocols
+            such as Diffie–Hellman rely on commutative algebraic structures,
+            group-based cryptography investigates protocols whose security depends
+            on difficult computational problems in non-commutative groups.
+            </p>
+
+            <p>
+            The students studied groups generated by automata acting on rooted
+            trees, a class of objects arising in geometric group theory and
+            dynamical systems. In particular, they investigated
+            <em>contracting self-similar groups</em>, where elements admit recursive
+            descriptions through their actions on subtrees.
+            </p>
+
+            <p>
+            The project analyzed a heuristic attack against the
+            <em>simultaneous conjugacy search problem</em>: find an element
+            \( r \in G \) such that \( r^{-1} a_i r = b_i \) for all \( i \).
+            The attack reconstructs the hidden conjugator by recovering its action
+            level-by-level on the underlying rooted tree.
+            </p>
+
+            <p>
+            The resulting work combines ideas from combinatorial group theory,
+            automaton groups, and computational experimentation using the GAP
+            computer algebra system.
+            </p>
 
         </div>
 
