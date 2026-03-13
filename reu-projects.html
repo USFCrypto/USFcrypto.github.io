@@ -543,16 +543,6 @@
     <div class="program-list">
 
       <div class="mini-card">
-        <h3>Project Title Placeholder</h3>
-        <p><strong>Mentor(s):</strong> Faculty Name</p>
-        <p><strong>Student(s):</strong> Student Name(s)</p>
-        <p>
-          Placeholder for a short summary of a past project. This page is intentionally simple so that
-          it remains easy to maintain and expand each year.
-        </p>
-      </div>
-
-      <div class="mini-card">
 
       <h3>Breaking a Post-Quantum Digital Signature Scheme</h3>
 
@@ -589,6 +579,45 @@
       seconds. The project combined theoretical cryptanalysis, statistical testing
       (NIST randomness, avalanche, and collision tests), and computational
       experiments, resulting in a research paper describing the attack.
+      </p>
+
+    </div>
+
+    <div class="mini-card">
+
+      <h3>A Post-Quantum Verifiable Random Function from Code Equivalence</h3>
+
+      <p><strong>Mentor:</strong> Jean-Fran&ccedil;ois Biasse<br>
+      <strong>Participants:</strong> Franklin Harding (Oregon State University),
+      Siddarth Sitaraman (Brown University)</p>
+
+      <p>
+      Verifiable Random Functions (VRFs) are cryptographic primitives that produce
+      outputs that appear random but whose correctness can be publicly verified.
+      They play an important role in modern distributed systems, including
+      blockchain consensus mechanisms such as Algorand.
+      </p>
+
+      <p>
+      In this project, the students explored how to design a
+      <strong>post-quantum VRF</strong> using the
+      <em>Code Equivalence Problem</em>, a computational problem from coding theory.
+      The goal was to replace classical VRFs based on discrete logarithms—which are
+      vulnerable to quantum attacks—with constructions relying on the hardness of
+      finding transformations between equivalent linear codes.
+      </p>
+
+      <p>
+      The project resulted in a proof-of-concept construction of a VRF based on
+      signed permutation equivalence of linear codes, together with a zero-knowledge
+      proof protocol used to verify the correctness of the VRF output. :contentReference[oaicite:0]{index=0}
+      </p>
+
+      <p>
+      Interestingly, shortly after the REU concluded, follow-up research identified
+      structural weaknesses in the proof of concept. This led to a refinement of the
+      theoretical framework surrounding group-action-based VRFs and helped clarify
+      which assumptions are necessary for secure post-quantum constructions.
       </p>
 
     </div>
