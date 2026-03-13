@@ -544,83 +544,169 @@
 
       <div class="mini-card">
 
-      <h3>Breaking a Post-Quantum Digital Signature Scheme</h3>
+        <h3>Breaking a Post-Quantum Digital Signature Scheme</h3>
 
-      <p><strong>Mentor:</strong> Dmytro Savchuk<br>
-      <strong>Participant:</strong> Kianna Cabral (Northeastern University)</p>
+        <p><strong>Mentor:</strong> Dmytro Savchuk<br>
+        <strong>Participant:</strong> Kianna Cabral (Northeastern University)</p>
 
-      <p>
-      As quantum computers threaten traditional public-key cryptography, researchers
-      worldwide are searching for new <strong>post-quantum cryptographic systems</strong>.
-      However, designing secure schemes is extremely difficult: many promising
-      candidates are later shown to contain subtle mathematical weaknesses.
-      </p>
+        <p>
+        As quantum computers threaten traditional public-key cryptography, researchers
+        worldwide are searching for new <strong>post-quantum cryptographic systems</strong>.
+        However, designing secure schemes is extremely difficult: many promising
+        candidates are later shown to contain subtle mathematical weaknesses.
+        </p>
 
-      <p>
-      In this project, the student studied the digital signature scheme
-      <strong>Xifrat1-Sign.I</strong>, a proposed post-quantum system based on
-      algebraic structures called <em>quasigroups</em>. The goal was to analyze the
-      security of the scheme using both statistical experiments and algebraic
-      methods implemented in the computer algebra system GAP.
-      </p>
+        <p>
+        In this project, the student studied the digital signature scheme
+        <strong>Xifrat1-Sign.I</strong>, a proposed post-quantum system based on
+        algebraic structures called <em>quasigroups</em>. The goal was to analyze the
+        security of the scheme using both statistical experiments and algebraic
+        methods implemented in the computer algebra system GAP.
+        </p>
 
-      <p>
-      The investigation revealed structural weaknesses in the mixing functions used
-      by the scheme. In particular, the functions exhibit a cyclic behavior that
-      allows the secret key to be recovered by repeatedly applying the public
-      operation. Concretely, if the public key contains values
-      \(p_1 = \mathrm{DUP}(c,k)\) and \(p_2 = \mathrm{DUP}(k,q)\),
-      then iterating the operation roughly \(480\) times recovers the secret key
-      components \(k\) and \(q\). :contentReference[oaicite:0]{index=0}
-      </p>
+        <p>
+        The investigation revealed structural weaknesses in the mixing functions used
+        by the scheme. In particular, the functions exhibit a cyclic behavior that
+        allows the secret key to be recovered by repeatedly applying the public
+        operation. Concretely, if the public key contains values
+        \(p_1 = \mathrm{DUP}(c,k)\) and \(p_2 = \mathrm{DUP}(k,q)\),
+        then iterating the operation roughly \(480\) times recovers the secret key
+        components \(k\) and \(q\). :contentReference[oaicite:0]{index=0}
+        </p>
 
-      <p>
-      This discovery leads to a practical attack that breaks the cryptosystem in
-      seconds. The project combined theoretical cryptanalysis, statistical testing
-      (NIST randomness, avalanche, and collision tests), and computational
-      experiments, resulting in a research paper describing the attack.
-      </p>
+        <p>
+        This discovery leads to a practical attack that breaks the cryptosystem in
+        seconds. The project combined theoretical cryptanalysis, statistical testing
+        (NIST randomness, avalanche, and collision tests), and computational
+        experiments, resulting in a research paper describing the attack.
+        </p>
 
-    </div>
+      </div>
 
-    <div class="mini-card">
+      <div class="mini-card">
 
-      <h3>A Post-Quantum Verifiable Random Function from Code Equivalence</h3>
+        <h3>A Post-Quantum Verifiable Random Function from Code Equivalence</h3>
 
-      <p><strong>Mentor:</strong> Jean-Fran&ccedil;ois Biasse<br>
-      <strong>Participants:</strong> Franklin Harding (Oregon State University),
-      Siddarth Sitaraman (Brown University)</p>
+        <p><strong>Mentor:</strong> Jean-Fran&ccedil;ois Biasse<br>
+        <strong>Participants:</strong> Franklin Harding (Oregon State University),
+        Siddarth Sitaraman (Brown University)</p>
 
-      <p>
-      Verifiable Random Functions (VRFs) are cryptographic primitives that produce
-      outputs that appear random but whose correctness can be publicly verified.
-      They play an important role in modern distributed systems, including
-      blockchain consensus mechanisms such as Algorand.
-      </p>
+        <p>
+        Verifiable Random Functions (VRFs) are cryptographic primitives that produce
+        outputs that appear random but whose correctness can be publicly verified.
+        They play an important role in modern distributed systems, including
+        blockchain consensus mechanisms such as Algorand.
+        </p>
 
-      <p>
-      In this project, the students explored how to design a
-      <strong>post-quantum VRF</strong> using the
-      <em>Code Equivalence Problem</em>, a computational problem from coding theory.
-      The goal was to replace classical VRFs based on discrete logarithms—which are
-      vulnerable to quantum attacks—with constructions relying on the hardness of
-      finding transformations between equivalent linear codes.
-      </p>
+        <p>
+        In this project, the students explored how to design a
+        <strong>post-quantum VRF</strong> using the
+        <em>Code Equivalence Problem</em>, a computational problem from coding theory.
+        The goal was to replace classical VRFs based on discrete logarithms—which are
+        vulnerable to quantum attacks—with constructions relying on the hardness of
+        finding transformations between equivalent linear codes.
+        </p>
 
-      <p>
-      The project resulted in a proof-of-concept construction of a VRF based on
-      signed permutation equivalence of linear codes, together with a zero-knowledge
-      proof protocol used to verify the correctness of the VRF output. :contentReference[oaicite:0]{index=0}
-      </p>
+        <p>
+        The project resulted in a proof-of-concept construction of a VRF based on
+        signed permutation equivalence of linear codes, together with a zero-knowledge
+        proof protocol used to verify the correctness of the VRF output. 
+        </p>
 
-      <p>
-      Interestingly, shortly after the REU concluded, follow-up research identified
-      structural weaknesses in the proof of concept. This led to a refinement of the
-      theoretical framework surrounding group-action-based VRFs and helped clarify
-      which assumptions are necessary for secure post-quantum constructions.
-      </p>
+        <p>
+        Interestingly, shortly after the REU concluded, follow-up research identified
+        structural weaknesses in the proof of concept. This led to a refinement of the
+        theoretical framework surrounding group-action-based VRFs and helped clarify
+        which assumptions are necessary for secure post-quantum constructions.
+        </p>
 
-    </div>
+      </div>
+
+      <div class="mini-card">
+
+        <h3>Efficient Implementations of Post-Quantum and Classical Cryptography</h3>
+
+        <p><strong>Mentor:</strong> Mehran Mozaffari Kermani<br>
+        <strong>Participants:</strong> Habiba Abouzaid (Polk State College),
+        Tyson Thomas (Bethune-Cookman University)</p>
+
+        <p>
+        Modern cryptographic systems must not only be mathematically secure but also
+        <strong>efficient and reliable in real-world implementations</strong>. This project
+        focused on implementing and optimizing both classical and post-quantum
+        cryptographic algorithms used in secure communications.
+        </p>
+
+        <p>
+        The students studied and implemented the
+        <strong>CRYSTALS-Kyber</strong> key-encapsulation mechanism, one of the algorithms
+        selected in the NIST post-quantum cryptography standardization process.
+        Kyber is based on the hardness of the Learning With Errors (LWE) problem and
+        is designed to remain secure even in the presence of quantum computers. 
+        </p>
+
+        <p>
+        In addition, the project explored implementations of
+        <strong>Elliptic Curve Cryptography (ECC)</strong> together with techniques for
+        algorithm-level fault detection, an important countermeasure against
+        hardware fault attacks that attempt to extract secret keys from cryptographic
+        devices. 
+        </p>
+
+        <p>
+        By combining software implementation, performance analysis, and security
+        considerations, the project gave students hands-on experience with the
+        engineering challenges involved in deploying cryptography in practical
+        systems.
+        </p>
+
+      </div>
+
+      <div class="mini-card">
+
+        <h3>Normal Polynomials and Symmetrization Methods in Finite Fields</h3>
+
+        <p><strong>Mentor:</strong> Xiang-Dong Hou<br>
+        <strong>Participants:</strong> Darien Connolly (SUNY Geneseo),
+        Calvin George (Dartmouth College),
+        Adam Madro (Boston College)</p>
+
+        <p>
+        Normal bases are fundamental objects in finite field theory and play an
+        important role in applications such as coding theory and cryptography.
+        A polynomial over a finite field is called <em>normal</em> if its roots form a
+        normal basis of the corresponding field extension.
+        </p>
+
+        <p>
+        If an irreducible polynomial over \( \mathbb{F}_q \) has roots
+        \( r, r^q, \ldots, r^{q^{n-1}} \), then it is normal precisely when the
+        following circulant determinant is nonzero:
+        </p>
+
+        <p style="text-align:center;">
+        \[
+        \Delta_n(r,r^q,\ldots,r^{q^{n-1}})=
+        \det
+        \begin{pmatrix}
+        r & r^q & \cdots & r^{q^{n-1}} \\
+        r^{q^{n-1}} & r & \cdots & r^{q^{n-2}} \\
+        \vdots & \vdots & \ddots & \vdots \\
+        r^q & r^{q^2} & \cdots & r
+        \end{pmatrix}
+        \neq 0 .
+        \]
+        </p>
+
+        <p>
+        The project studied how to transform this root-based criterion into conditions
+        on the coefficients of the polynomial using symmetrization techniques. This
+        approach leads to practical tests for determining when polynomials over finite
+        fields are normal and resulted in a research article developing new methods for
+        detecting normal polynomials. :contentReference[oaicite:0]{index=0}
+        </p>
+
+      </div>
 
     </div>
   </section>
