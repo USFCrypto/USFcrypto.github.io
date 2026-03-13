@@ -339,11 +339,7 @@
         <strong>Permutation Code Equivalence (PCE)</strong> problems.
         Building on recent advances in algorithmic group theory and graph
         isomorphism techniques, they analyzed algorithms whose running times are
-        approximately
-        </p>
-
-        <p style="text-align:center;">
-        \(2^{n}, \qquad 2^{n/2}, \qquad 2^{n/3}\)
+        in \(O(2^{n})\) (deterministic), \(O(2^{n/2})\) (probabilistic) and \(O(2^{n/3})\) (quantum).
         </p>
 
         <p>
@@ -352,6 +348,52 @@
         fields. The project combined ideas from coding theory, combinatorics, and
         algorithm design and resulted in a research paper produced during the REU
         program.
+        </p>
+
+      </div>
+
+      <div class="mini-card">
+
+        <h3>Heuristic Attacks on the Simultaneous Conjugacy Search Problem</h3>
+
+        <p><strong>Mentor:</strong> Dmytro Savchuk<br>
+        <strong>Participants:</strong> Luciana Scuderi (Truman State University),
+        Kerry Seekamp (Smith College)</p>
+
+        <p>
+        Several cryptographic proposals rely on computational problems arising in
+        non-commutative algebraic structures. One important example is the
+        <strong>Simultaneous Conjugacy Search Problem (SCSP)</strong>: given elements
+        \(g_1,\ldots,g_n\) and \(h_1,\ldots,h_n\) in a group \(G\) such that
+        </p>
+
+        <p style="text-align:center;">
+        \(h_i = r^{-1} g_i r\)
+        </p>
+
+        <p>
+        for some unknown element \(r \in G\), the goal is to recover the
+        <strong>conjugator</strong> \(r\). This problem underlies several
+        group-based cryptographic protocols such as the
+        Anshel–Anshel–Goldfeld and Ko–Lee key exchange schemes.
+        </p>
+
+        <p>
+        In this project, the students investigated the SCSP in
+        <strong>contracting self-similar groups</strong> acting on rooted trees.
+        These groups admit compact representations of elements through
+        <em>nucleus portraits</em>, which encode group elements as labeled trees.
+        Using this structure, the team developed and implemented a
+        <strong>portrait-based heuristic attack</strong> that reconstructs the
+        secret conjugator level-by-level from the portraits of conjugate elements.
+        </p>
+
+        <p>
+        The project combined computational experimentation in the
+        GAP computer algebra system with theoretical analysis of the
+        algorithm’s complexity and effectiveness across several classes
+        of automaton groups. The work resulted in a research preprint
+        produced during the REU program.
         </p>
 
       </div>
