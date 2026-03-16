@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RTG Members | USF Cryptography Center</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .rtg-subnav {
+      background: white;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .rtg-subnav-inner {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      padding: 0.95rem 0;
+      font-weight: 700;
+    }
+
+    .rtg-subnav-inner a {
+      color: var(--ink);
+      text-decoration: none;
+    }
+
+    .rtg-subnav-inner a:hover,
+    .rtg-subnav-inner a.active {
+      color: var(--green);
+    }
+
+    .members-hero .hero-overlay {
+      background: linear-gradient(90deg, rgba(9,17,21,0.72), rgba(9,17,21,0.34));
+    }
+
+    .members-intro {
+      max-width: 58rem;
+    }
+
+    .members-section + .members-section {
+      margin-top: 1rem;
+    }
+
+    .members-section .section-head {
+      margin-bottom: 1.35rem;
+    }
+
+    .members-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1.35rem;
+    }
+
+    .member-card {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(15, 27, 36, 0.06);
+      height: 100%;
+    }
+
+    .member-card img {
+      width: 100%;
+      aspect-ratio: 4 / 4.6;
+      object-fit: cover;
+      display: block;
+      background: #f6f8f9;
+    }
+
+    .member-card img.placeholder {
+      object-fit: contain;
+      padding: 1.1rem;
+      background: linear-gradient(180deg, #f7f8fa 0%, #eef2f4 100%);
+    }
+
+    .member-body {
+      padding: 1.1rem 1.15rem 1.25rem;
+    }
+
+    .member-body h3 {
+      margin: 0 0 0.35rem;
+      font-size: 1.14rem;
+      line-height: 1.2;
+    }
+
+    .member-role {
+      font-weight: 700;
+      color: var(--green);
+      margin-bottom: 0.55rem;
+      font-size: 0.96rem;
+    }
+
+    .member-body p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.97rem;
+    }
+
+    .category-band {
+      display: inline-block;
+      margin-bottom: 0.55rem;
+      padding: 0.28rem 0.7rem;
+      border-radius: 999px;
+      background: rgba(11, 107, 74, 0.10);
+      color: var(--green);
+      font-size: 0.78rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .light-callout {
+      background: linear-gradient(135deg, rgba(11,107,74,0.08), rgba(11,107,74,0.03));
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 1.4rem 1.5rem;
+      box-shadow: 0 10px 28px rgba(15, 27, 36, 0.05);
+    }
+
+    @media (max-width: 1100px) {
+      .members-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 800px) {
+      .members-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 560px) {
+      .members-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header class="site-header compact">
+  <div class="container nav">
+    <a class="brand" href="index.html">
+      <img src="assets/images/logo-padlock.png" alt="USF Cryptography Center logo">
+      <span>USF Cryptography Center</span>
+    </a>
+
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="research.html">Research</a>
+      <a href="people.html">People</a>
+      <a href="programs.html">Programs</a>
+      <a href="rtg.html">RTG</a>
+      <a href="reu.html">REU</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero members-hero" style="min-height: 48vh;">
+  <img class="hero-image" src="assets/images/rtg-group.jpg" alt="RTG group photo at USF">
+  <div class="hero-overlay"></div>
+  <div class="container hero-content">
+    <div class="eyebrow">RTG Community</div>
+    <h1>Members of the RTG</h1>
+    <p class="lead members-intro">
+      The RTG brings together faculty mentors, postdoctoral scholars, graduate students,
+      and external collaborators in a vertically integrated research community in applied algebra,
+      cryptography, coding theory, and quantum computing.
+    </p>
+  </div>
+</section>
+
+<section class="rtg-subnav">
+  <div class="container">
+    <nav class="rtg-subnav-inner">
+      <a href="rtg.html">Overview</a>
+      <a href="rtg-members.html" class="active">Members</a>
+      <a href="rtg-seminars.html">Seminars</a>
+      <a href="rtg-workshops.html">Workshops</a>
+      <a href="rtg-application.html">Application</a>
+    </nav>
+  </div>
+</section>
+
+<main>
+
+<section class="section">
+  <div class="container">
+    <div class="light-callout">
+      <p class="eyebrow green">Community structure</p>
+      <h2 style="margin-bottom: 0.7rem;">A multi-level research environment</h2>
+      <p style="margin-bottom: 0;">
+        One of the strengths of the RTG is that it is not organized around a single cohort.
+        Undergraduates, graduate students, postdoctoral scholars, faculty mentors, and outside
+        collaborators all contribute to the same research ecosystem.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="section members-section">
+  <div class="container">
+    <div class="section-head">
+      <span class="category-band">Leadership</span>
+      <h2>Principal Investigators</h2>
+      <p>The core investigators leading the RTG in Applied Algebra at USF.</p>
+    </div>
+
+    <div class="members-grid">
+      <article class="member-card">
+        <img src="assets/images/biasse.jpg" alt="Jean-François Biasse">
+        <div class="member-body">
+          <h3>Jean-François Biasse</h3>
+          <div class="member-role">PI · Mathematics</div>
+          <p>Computational algebra, cryptography, and quantum computing.</p>
+        </div>
+      </article>
+
+      <article class="member-card">
+        <img src="assets/images/micheli.jpg" alt="Giacomo Micheli">
+        <div class="member-body">
+          <h3>Giacomo Micheli</h3>
+          <div class="member-role">Co-PI · Mathematics</div>
+          <p>Algebraic geometry, coding theory, and cryptography.</p>
+        </div>
+      </article>
+
+      <article class="member-card">
+        <img src="assets/images/hou.jpg" alt="Xiang-Dong Hou">
+        <div class="member-body">
+          <h3>Xiang-Dong Hou</h3>
+          <div class="member-role">Co-PI · Mathematics</div>
+          <p>Number theory, algebra, and coding theory.</p>
+        </div>
+      </article>
+
+      <article class="member-card">
+        <img src="assets/images/savchuk.jpg" alt="Dmytro Savchuk">
+        <div class="member-body">
+          <h3>Dmytro Savchuk</h3>
+          <div class="member-role">Co-PI · Mathematics</div>
+          <p>Computational group theory and cryptography.</p>
+        </div>
+      </article>
+
+      <article class="member-card">
+        <img src="assets/images/teodorescu.jpg" alt="Razvan Teodorescu">
+        <div class="member-body">
+          <h3>Razvan Teodorescu</h3>
+          <div class="member-role">Co-PI · Physics / Quantum Computing</div>
+          <p>Quantum computing and mathematical physics.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt members-section">
+  <div class="container">
+    <div class="section-head">
+      <span class="category-band">Faculty</span>
+      <h2>Other Faculty Members</h2>
+      <p>Additional faculty contributing to the broader RTG research and mentoring environment.</p>
+    </div>
+
+    <div class="members-grid">
+      <article class="member-card">
+        <img src="assets/images/pllaha.jpg" alt="Edi Pllaha">
+        <div class="member-body">
+          <h3>Edi Pllaha</h3>
+          <div class="member-role">Faculty Member</div>
+          <p>Applied algebra and related mathematical directions connected to the RTG ecosystem.</p>
+        </div>
+      </article>
+
+      <article class="member-card">
+        <img src="assets/images/kermani.jpg" alt="Mehran Mozaffari Kermani">
+        <div class="member-body">
+          <h3>Mehran Mozaffari Kermani</h3>
+          <div class="member-role">Faculty Member</div>
+          <p>Cryptographic engineering, hardware security, and implementation-focused cryptography.</p>
+        </div>
+      </article>
+
+      <article class="member-card">
+        <img src="assets/images/yavuz.jpg" alt="Attila Yavuz">
+        <div class="member-body">
+          <h3>Attila Yavuz</h3>
+          <div class="member-role">Faculty Member</div>
+          <p>Practical cryptography, secure systems, and applied cybersecurity.</p>
+        </div>
+      </article>
+
+      <article class="member-card">
+        <img src="assets/images/koelsch.jpg" alt="Lukas Koelsch">
+        <div class="member-body">
+          <h3>Lukas Koelsch</h3>
+          <div class="member-role">Faculty Member</div>
+          <p>Algebra, combinatorics, number theory, and coding-theory-adjacent research.</p>
+        </div>
+      </article>
+
+      <article class="member-card">
+        <img src="assets/images/sears.jpg" alt="Ruthmae Sears">
+        <div class="member-body">
+          <h3>Ruthmae Sears</h3>
+          <div class="member-role">Faculty Member</div>
+          <p>Mentoring, pedagogy, and professional development within the RTG structure.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section members-section">
+  <div class="container">
+    <div class="section-head">
+      <span class="category-band">Postdoctoral Scholars</span>
+      <h2>Postdoctoral Scholars</h2>
+      <p>Postdocs play a key role in research leadership, mentoring, and day-to-day intellectual life.</p>
+    </div>
+
+    <div class="members-grid">
+      <article class="member-card">
+        <img class="placeholder" src="assets/images/placeholder-person.jpg" alt="Placeholder portrait for Alexandra Hostetler">
+        <div class="member-body">
+          <h3>Alexandra Hostetler</h3>
+          <div class="member-role">Postdoctoral Scholar</div>
+          <p>RTG postdoctoral scholar.</p>
+        </div>
+      </article>
+
+      <article class="member-card">
+        <img class="placeholder" src="assets/images/placeholder-person.jpg" alt="Placeholder portrait for Freeman Slaughter">
+        <div class="member-body">
+          <h3>Freeman Slaughter</h3>
+          <div class="member-role">Postdoctoral Scholar</div>
+          <p>RTG postdoctoral scholar.</p>
+        </div>
+      </article>
+
+      <article class="member-card">
+        <img class="placeholder" src="assets/images/placeholder-person.jpg" alt="Placeholder portrait for Rumi Pelen">
+        <div class="member-body">
+          <h3>Rumi Pelen</h3>
+          <div class="member-role">Postdoctoral Scholar</div>
+          <p>RTG postdoctoral scholar.</p>
+        </div>
+      </article>
+
+      <article class="member-card">
+        <img class="placeholder" src="assets/images/placeholder-person.jpg" alt="Placeholder portrait for Anthony Gomez Fonseca">
+        <div class="member-body">
+          <h3>Anthony Gomez Fonseca</h3>
+          <div class="member-role">Postdoctoral Scholar</div>
+          <p>RTG postdoctoral scholar.</p>
+        </div>
+      </article>
+
+      <article class="member-card">
+        <img src="assets/images/maksym-chaudkary.jpg" alt="Maksym Chaudkary">
+        <div class="member-body">
+          <h3>Maksym Chaudkary</h3>
+          <div class="member-role">Postdoctoral Scholar</div>
+          <p>RTG postdoctoral scholar.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt members-section">
+  <div class="container">
+    <div class="section-head">
+      <span class="category-band">Graduate Students</span>
+      <h2>Graduate Students</h2>
+      <p>Graduate trainees form an essential layer of the RTG’s research and mentoring pipeline.</p>
+    </div>
+
+    <div class="members-grid">
+      <article class="member-card">
+        <img class="placeholder" src="assets/images/placeholder-person.jpg" alt="Placeholder portrait for Akash Bhople">
+        <div class="member-body">
+          <h3>Akash Bhople</h3>
+          <div class="member-role">Graduate Student</div>
+          <p>RTG graduate trainee.</p>
+        </div>
+      </article>
+
+      <article class="member-card">
+        <img class="placeholder" src="assets/images/placeholder-person.jpg" alt="Placeholder portrait for Cooper O'Kuhn">
+        <div class="member-body">
+          <h3>Cooper O’Kuhn</h3>
+          <div class="member-role">Graduate Student</div>
+          <p>RTG graduate trainee.</p>
+        </div>
+      </article>
+
+      <article class="member-card">
+        <img class="placeholder" src="assets/images/placeholder-person.jpg" alt="Placeholder portrait for Curtis Wilson">
+        <div class="member-body">
+          <h3>Curtis Wilson</h3>
+          <div class="member-role">Graduate Student</div>
+          <p>RTG graduate trainee.</p>
+        </div>
+      </article>
+
+      <article class="member-card">
+        <img class="placeholder" src="assets/images/placeholder-person.jpg" alt="Placeholder portrait for Javier Olmedo">
+        <div class="member-body">
+          <h3>Javier Olmedo</h3>
+          <div class="member-role">Graduate Student</div>
+          <p>RTG graduate trainee.</p>
+        </div>
+      </article>
+
+      <article class="member-card">
+        <img class="placeholder" src="assets/images/placeholder-person.jpg" alt="Placeholder portrait for Eveleyn Sabo">
+        <div class="member-body">
+          <h3>Eveleyn Sabo</h3>
+          <div class="member-role">Graduate Student</div>
+          <p>RTG graduate trainee.</p>
+        </div>
+      </article>
+
+      <article class="member-card">
+        <img class="placeholder" src="assets/images/placeholder-person.jpg" alt="Placeholder portrait for Tasawwar Hussain">
+        <div class="member-body">
+          <h3>Tasawwar Hussain</h3>
+          <div class="member-role">Graduate Student</div>
+          <p>RTG graduate trainee.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section members-section">
+  <div class="container">
+    <div class="section-head">
+      <span class="category-band">External Members</span>
+      <h2>External Members</h2>
+      <p>Collaborators and outside members who strengthen the RTG’s broader research network.</p>
+    </div>
+
+    <div class="members-grid">
+      <article class="member-card">
+        <img class="placeholder" src="assets/images/placeholder-person.jpg" alt="Placeholder portrait for Janer">
+        <div class="member-body">
+          <h3>Janer</h3>
+          <div class="member-role">External Member</div>
+          <p>External collaborator connected to the RTG network.</p>
+        </div>
+      </article>
+
+      <article class="member-card">
+        <img class="placeholder" src="assets/images/placeholder-person.jpg" alt="Placeholder portrait for Edoardo">
+        <div class="member-body">
+          <h3>Edoardo</h3>
+          <div class="member-role">External Member</div>
+          <p>External collaborator connected to the RTG network.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <p>USF Cryptography Center</p>
+    <p>NSF RTG in Applied Algebra at USF</p>
+  </div>
+</footer>
+
+</body>
+</html>
