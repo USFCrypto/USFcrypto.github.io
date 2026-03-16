@@ -6,740 +6,495 @@
   <title>RTG in Applied Algebra | USF Cryptography Center</title>
   <link rel="stylesheet" href="styles.css" />
   <style>
-    .rtg-page {
-      background:
-        radial-gradient(circle at top right, rgba(11, 107, 74, 0.08), transparent 28%),
-        radial-gradient(circle at bottom left, rgba(11, 107, 74, 0.06), transparent 22%),
-        #ffffff;
+    .rtg-hero .hero-overlay {
+      background: linear-gradient(90deg, rgba(9,17,21,0.74), rgba(9,17,21,0.34));
     }
 
-    .rtg-hero {
-      position: relative;
-      overflow: hidden;
-      padding: 6rem 0 5rem;
-      background:
-        linear-gradient(135deg, rgba(8, 78, 55, 0.96), rgba(11, 107, 74, 0.90)),
-        linear-gradient(120deg, #0b6b4a, #084e37);
-      color: white;
-    }
-
-    .rtg-hero::before,
-    .rtg-hero::after {
-      content: "";
-      position: absolute;
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.08);
-      filter: blur(2px);
-    }
-
-    .rtg-hero::before {
-      width: 340px;
-      height: 340px;
-      top: -90px;
-      right: -80px;
-    }
-
-    .rtg-hero::after {
-      width: 220px;
-      height: 220px;
-      bottom: -70px;
-      left: -40px;
-    }
-
-    .rtg-hero-grid {
-      position: relative;
-      z-index: 1;
-      display: grid;
-      grid-template-columns: 1.35fr 0.85fr;
-      gap: 2rem;
-      align-items: center;
-    }
-
-    .rtg-hero h1 {
-      font-size: clamp(2.7rem, 5.7vw, 4.8rem);
-      line-height: 1.02;
-      margin: 0 0 1rem;
-      max-width: 11ch;
-    }
-
-    .rtg-hero .lead {
-      max-width: 46rem;
-      color: rgba(255, 255, 255, 0.92);
-      font-size: 1.12rem;
-    }
-
-    .rtg-hero .hero-actions {
-      margin-top: 2rem;
-    }
-
-    .rtg-hero .button.primary {
-      background: white;
-      color: var(--green-dark);
-    }
-
-    .rtg-hero .button.ghost {
-      border: 1px solid rgba(255,255,255,0.45);
-      color: white;
-    }
-
-    .rtg-highlight-panel {
-      background: rgba(255,255,255,0.12);
-      border: 1px solid rgba(255,255,255,0.18);
-      border-radius: 26px;
-      padding: 1.5rem;
-      backdrop-filter: blur(8px);
-      box-shadow: 0 14px 40px rgba(7, 20, 16, 0.16);
-    }
-
-    .rtg-highlight-panel h3 {
-      margin: 0 0 1rem;
-      font-size: 1.15rem;
-    }
-
-    .rtg-stat-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 0.9rem;
-      margin-top: 1rem;
-    }
-
-    .rtg-stat {
-      background: rgba(255,255,255,0.10);
-      border: 1px solid rgba(255,255,255,0.14);
-      border-radius: 18px;
-      padding: 1rem;
-    }
-
-    .rtg-stat-number {
-      display: block;
-      font-size: 2rem;
-      font-weight: 800;
-      line-height: 1;
-      margin-bottom: 0.35rem;
-    }
-
-    .rtg-stat-label {
-      font-size: 0.92rem;
-      color: rgba(255,255,255,0.88);
-    }
-
-    .rtg-intro {
-      margin-top: -2.25rem;
-      position: relative;
-      z-index: 2;
-    }
-
-    .rtg-intro-card {
-      background: white;
-      border: 1px solid var(--line);
-      border-radius: 28px;
-      padding: 2rem;
-      box-shadow: 0 18px 45px rgba(15, 27, 36, 0.08);
-    }
-
-    .rtg-pillars .card,
-    .rtg-activities .mini-card,
-    .rtg-audience .mini-card {
-      height: 100%;
-    }
-
-    .rtg-pillars .card-body p,
-    .rtg-activities .mini-card p,
-    .rtg-audience .mini-card p {
-      margin-bottom: 0;
-    }
-
-    .rtg-pillars .card-body {
-      padding-top: 1.3rem;
-    }
-
-    .rtg-icon {
-      width: 54px;
-      height: 54px;
-      border-radius: 16px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 0.9rem;
-      background: rgba(11, 107, 74, 0.10);
-      color: var(--green);
-      font-size: 1.35rem;
-      font-weight: 800;
-    }
-
-    .goals-grid {
-      display: grid;
-      grid-template-columns: repeat(5, minmax(0, 1fr));
-      gap: 1rem;
-    }
-
-    .goal-card {
-      background: white;
-      border: 1px solid var(--line);
-      border-radius: 22px;
-      padding: 1.25rem;
-      box-shadow: 0 10px 28px rgba(15, 27, 36, 0.06);
-    }
-
-    .goal-number {
-      display: inline-flex;
-      width: 36px;
-      height: 36px;
-      align-items: center;
-      justify-content: center;
-      border-radius: 999px;
-      background: rgba(11, 107, 74, 0.10);
-      color: var(--green);
-      font-weight: 800;
-      margin-bottom: 0.9rem;
-    }
-
-    .goal-card h3 {
-      margin: 0 0 0.55rem;
-      font-size: 1.02rem;
-    }
-
-    .goal-card p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 0.96rem;
-    }
-
-    .pathway-grid {
+    .rtg-at-a-glance {
       display: grid;
       grid-template-columns: repeat(4, minmax(0, 1fr));
       gap: 1rem;
-      align-items: stretch;
+      margin-top: 2rem;
     }
 
-    .path-card {
+    .rtg-glance-card {
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 20px;
+      padding: 1rem 1.1rem;
+      color: white;
+      backdrop-filter: blur(6px);
+    }
+
+    .rtg-glance-card strong {
+      display: block;
+      font-size: 1.35rem;
+      line-height: 1.1;
+      margin-bottom: 0.3rem;
+    }
+
+    .rtg-glance-card span {
+      color: rgba(255,255,255,0.88);
+      font-size: 0.95rem;
+    }
+
+    .value-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.4rem;
+    }
+
+    .value-card {
       background: white;
       border: 1px solid var(--line);
-      border-radius: 24px;
-      padding: 1.35rem;
+      border-radius: 22px;
+      overflow: hidden;
       box-shadow: 0 10px 30px rgba(15, 27, 36, 0.06);
-      position: relative;
     }
 
-    .path-card h3 {
-      margin: 0 0 0.6rem;
-      font-size: 1.1rem;
+    .value-card img {
+      width: 100%;
+      aspect-ratio: 16/10;
+      object-fit: cover;
     }
 
-    .path-card p {
-      margin: 0;
-      color: var(--muted);
+    .value-card .card-body {
+      padding: 1.15rem 1.2rem 1.35rem;
     }
 
-    .path-tag {
-      display: inline-block;
-      margin-bottom: 0.9rem;
-      padding: 0.32rem 0.62rem;
-      border-radius: 999px;
-      background: rgba(11, 107, 74, 0.10);
-      color: var(--green);
-      font-size: 0.76rem;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-    }
-
-    .hub-band {
-      padding: 2rem;
-      background: linear-gradient(135deg, rgba(11, 107, 74, 0.08), rgba(11, 107, 74, 0.03));
+    .highlight-band {
+      background: linear-gradient(135deg, rgba(11,107,74,0.08), rgba(11,107,74,0.03));
       border: 1px solid var(--line);
-      border-radius: 28px;
+      border-radius: 24px;
+      padding: 1.6rem;
       box-shadow: 0 10px 30px rgba(15, 27, 36, 0.05);
     }
 
-    .hub-grid {
+    .opportunity-grid {
       display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 1.5rem;
-      align-items: center;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.4rem;
     }
 
-    .hub-points {
-      display: grid;
-      gap: 0.9rem;
+    .opportunity-card {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 1.4rem;
+      box-shadow: 0 10px 30px rgba(15, 27, 36, 0.06);
     }
 
-    .hub-point {
-      background: rgba(255,255,255,0.82);
-      border: 1px solid rgba(217,225,229,0.95);
-      border-radius: 18px;
-      padding: 1rem 1.1rem;
+    .opportunity-card h3 {
+      margin: 0 0 0.55rem;
+      font-size: 1.2rem;
     }
 
-    .hub-point h3 {
-      margin: 0 0 0.35rem;
-      font-size: 1rem;
+    .opportunity-card p {
+      color: var(--muted);
+      margin-bottom: 1rem;
     }
 
-    .hub-point p {
-      margin: 0;
+    .opportunity-card a {
+      font-weight: 700;
+      color: var(--green);
+    }
+
+    .rtg-callout {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 1.5rem;
+      box-shadow: 0 10px 30px rgba(15, 27, 36, 0.06);
+    }
+
+    .rtg-callout ul {
+      padding-left: 1.2rem;
+      margin: 0.75rem 0 0;
+    }
+
+    .rtg-callout li {
+      margin-bottom: 0.45rem;
       color: var(--muted);
     }
 
-    .rtg-cta-box {
-      background: linear-gradient(135deg, #0b6b4a, #084e37);
-      color: white;
-      border-radius: 30px;
-      padding: 2rem;
-      box-shadow: 0 18px 40px rgba(8, 78, 55, 0.22);
-    }
-
-    .rtg-cta-box p {
-      color: rgba(255,255,255,0.88);
-    }
-
-    .rtg-cta-box .mini-card {
-      background: rgba(255,255,255,0.10);
-      border-color: rgba(255,255,255,0.16);
-      box-shadow: none;
-    }
-
-    .rtg-cta-box .mini-card h3,
-    .rtg-cta-box .mini-card p,
-    .rtg-cta-box .mini-card a {
-      color: white;
-    }
-
-    .rtg-cta-box .mini-card a {
+    .section-link a {
+      color: var(--green);
       font-weight: 700;
     }
 
-    @media (max-width: 1050px) {
-      .goals-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .pathway-grid {
+    @media (max-width: 1024px) {
+      .rtg-at-a-glance,
+      .value-grid,
+      .opportunity-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
     }
 
-    @media (max-width: 900px) {
-      .rtg-hero-grid,
-      .hub-grid {
+    @media (max-width: 700px) {
+      .rtg-at-a-glance,
+      .value-grid,
+      .opportunity-grid {
         grid-template-columns: 1fr;
-      }
-
-      .rtg-intro {
-        margin-top: 0;
-      }
-    }
-
-    @media (max-width: 680px) {
-      .goals-grid,
-      .pathway-grid,
-      .rtg-stat-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .rtg-hero {
-        padding: 5rem 0 4rem;
-      }
-
-      .rtg-intro-card,
-      .hub-band,
-      .rtg-cta-box {
-        padding: 1.4rem;
       }
     }
   </style>
 </head>
-<body class="rtg-page">
-  <header class="site-header">
-    <div class="container nav">
-      <a class="brand" href="index.html">
-        <img src="assets/images/logo-padlock.png" alt="USF Cryptography Center logo" />
-        <span>USF Cryptography Center</span>
-      </a>
-      <nav>
-        <a href="research.html">Research</a>
-        <a href="people.html">People</a>
-        <a href="programs.html">Programs</a>
-        <a href="rtg.html">RTG</a>
-      </nav>
-    </div>
-  </header>
+<body>
 
-  <section class="rtg-hero">
-    <div class="container rtg-hero-grid">
-      <div>
-        <p class="eyebrow">NSF Research Training Group</p>
-        <h1>Applied Algebra at USF</h1>
-        <p class="lead">
-          A flagship research and training ecosystem connecting
-          <strong>cryptography</strong>, <strong>coding theory</strong>, and
-          <strong>quantum computing</strong> through vertically integrated teams,
-          multi-tier mentoring, and year-round mathematical collaboration.
-        </p>
-        <div class="hero-actions">
-          <a class="button primary" href="programs.html">Explore programs</a>
-          <a class="button ghost" href="reu.html">Related REU site</a>
-        </div>
+<header class="site-header compact">
+  <div class="container nav">
+    <a class="brand" href="index.html">
+      <img src="assets/images/logo-padlock.png" alt="USF Cryptography Center logo">
+      <span>USF Cryptography Center</span>
+    </a>
+
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="research.html">Research</a>
+      <a href="people.html">People</a>
+      <a href="programs.html">Programs</a>
+      <a href="rtg.html">RTG</a>
+      <a href="reu.html">REU</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero rtg-hero" style="min-height: 68vh;">
+  <img class="hero-image" src="assets/images/rtg-group.jpg" alt="RTG students, postdocs, and faculty at USF">
+  <div class="hero-overlay"></div>
+  <div class="container hero-content">
+    <div class="eyebrow">NSF Research Training Group</div>
+    <h1>Applied Algebra at USF</h1>
+    <p class="lead">
+      A year-round research community in <strong>cryptography</strong>,
+      <strong>coding theory</strong>, and <strong>quantum computing</strong>
+      for undergraduates, graduate students, and postdoctoral researchers.
+    </p>
+    <p class="lead" style="max-width: 48rem;">
+      The RTG is designed for students and early-career researchers who want more than coursework:
+      real projects, close mentoring, seminar life, and a collaborative path into modern mathematical research.
+    </p>
+    <div class="hero-actions">
+      <a class="button primary" href="#opportunities">Explore Opportunities</a>
+      <a class="button ghost" href="research.html">Research Areas</a>
+    </div>
+
+    <div class="rtg-at-a-glance">
+      <div class="rtg-glance-card">
+        <strong>3</strong>
+        <span>connected research pillars</span>
+      </div>
+      <div class="rtg-glance-card">
+        <strong>Year-round</strong>
+        <span>research, seminars, and mentoring</span>
+      </div>
+      <div class="rtg-glance-card">
+        <strong>Multi-level</strong>
+        <span>undergrad, graduate, and postdoc pathways</span>
+      </div>
+      <div class="rtg-glance-card">
+        <strong>Real community</strong>
+        <span>not just isolated projects</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<main>
+
+<section class="section">
+  <div class="container split">
+    <div>
+      <div class="section-head">
+        <p class="eyebrow green">Why join the RTG?</p>
+        <h2>A stronger entry into research than a standard program page can convey</h2>
       </div>
 
-      <aside class="rtg-highlight-panel">
-        <h3>RTG at a glance</h3>
+      <p>
+        The RTG in Applied Algebra is built around a simple idea: the best way to grow into research
+        is to be part of an active mathematical community early and consistently. At USF, that means
+        working in an environment where undergraduates, graduate students, postdocs, and faculty interact
+        regularly rather than occupying separate worlds.
+      </p>
+
+      <p>
+        For prospective students and postdocs, the RTG offers a combination that is hard to get from
+        coursework alone: exposure to current research problems, close mentoring, opportunities to present,
+        interaction across academic levels, and a training culture connected to fast-moving areas such as
+        post-quantum cryptography, data reliability, and quantum information science.
+      </p>
+
+      <p>
+        If you are looking for a place where mathematics is both deep and connected to modern technology,
+        this program is meant to be an entry point into that world.
+      </p>
+    </div>
+
+    <aside class="rtg-callout">
+      <h3>What you get</h3>
+      <ul>
+        <li>Access to active research groups in applied algebra</li>
+        <li>Regular seminars, workshops, and collaborative meetings</li>
+        <li>Mentoring across faculty, postdoc, graduate, and undergraduate levels</li>
+        <li>Academic-year and summer research opportunities</li>
+        <li>A pathway into graduate study, postdoctoral work, and research careers</li>
+      </ul>
+    </aside>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow green">Research directions</p>
+      <h2>Three ways into applied algebra</h2>
+      <p>
+        Students and postdocs in the RTG engage with a broad mathematical landscape.
+        These three pillars give a good sense of the kinds of problems and communities you can connect with at USF.
+      </p>
+    </div>
+
+    <div class="value-grid">
+      <article class="value-card">
+        <img src="assets/images/pqc2.jpg" alt="Post-quantum cryptography and secure computation">
+        <div class="card-body">
+          <h3>Cryptography</h3>
+          <p>
+            Algebraic and number-theoretic methods for modern cryptography, including post-quantum security,
+            computational hardness, secure protocols, and implementation-aware research.
+          </p>
+        </div>
+      </article>
+
+      <article class="value-card">
+        <img src="assets/images/mathematics.jpg" alt="Mathematical structures and computational algebra">
+        <div class="card-body">
+          <h3>Coding Theory &amp; Computation</h3>
+          <p>
+            Error-correcting codes, algebraic structures over finite fields, reliable storage and communication,
+            and computational methods that connect pure mathematics with concrete applications.
+          </p>
+        </div>
+      </article>
+
+      <article class="value-card">
+        <img src="assets/images/quantum.jpg" alt="Quantum computing and quantum information">
+        <div class="card-body">
+          <h3>Quantum Computing</h3>
+          <p>
+            Quantum algorithms, mathematical aspects of quantum information, and intersections between algebra,
+            computation, and next-generation quantum technologies.
+          </p>
+        </div>
+      </article>
+    </div>
+
+    <p class="section-link" style="margin-top: 1.5rem;">
+      <a href="research.html">Explore the Center’s research areas →</a>
+    </p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container split">
+    <div>
+      <img src="assets/images/rtg-seminar.jpg" alt="RTG seminar or student presentation at USF" style="width:100%; border-radius:22px; box-shadow: 0 10px 30px rgba(15, 27, 36, 0.08);">
+    </div>
+
+    <div>
+      <div class="section-head">
+        <p class="eyebrow green">What the RTG feels like</p>
+        <h2>Research with structure, mentoring, and momentum</h2>
+      </div>
+
+      <p>
+        The RTG is not just a collection of funding lines. It is a working research environment.
+        Participants meet current problems through seminars, reading groups, team projects, and ongoing
+        discussions with faculty and peers.
+      </p>
+
+      <p>
+        A major strength of the program is its vertically integrated model: undergraduates can see what
+        graduate-level research looks like, graduate students gain mentoring and leadership experience,
+        and postdocs develop independence while contributing to the growth of the broader group.
+      </p>
+
+      <p>
+        In practice, that means the RTG supports both mathematical depth and professional formation:
+        learning how to read papers, ask questions, communicate ideas, collaborate effectively,
+        and build a research identity.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow green">Why trainees choose this environment</p>
+      <h2>More than coursework, more than a one-off project</h2>
+    </div>
+
+    <div class="card-grid three">
+      <div class="mini-card">
+        <h3>Close mentoring</h3>
         <p>
-          The program brings together faculty, postdoctoral associates, graduate
-          students, and undergraduates in a unified Applied Algebra pipeline with
-          strong links to cybersecurity, reliable computation, and quantum information science.
+          The RTG is built around repeated interaction with faculty, postdocs, and peers,
+          making it easier to grow steadily into research rather than navigating alone.
         </p>
-        <div class="rtg-stat-grid">
-          <div class="rtg-stat">
-            <span class="rtg-stat-number">3</span>
-            <span class="rtg-stat-label">research pillars</span>
-          </div>
-          <div class="rtg-stat">
-            <span class="rtg-stat-number">4</span>
-            <span class="rtg-stat-label">training levels</span>
-          </div>
-          <div class="rtg-stat">
-            <span class="rtg-stat-number">5</span>
-            <span class="rtg-stat-label">core program goals</span>
-          </div>
-          <div class="rtg-stat">
-            <span class="rtg-stat-number">1</span>
-            <span class="rtg-stat-label">Florida Hub vision</span>
-          </div>
-        </div>
-      </aside>
+      </div>
+
+      <div class="mini-card">
+        <h3>Intellectual community</h3>
+        <p>
+          Seminars, collaborative discussions, and shared activities help students become part of
+          a real mathematical culture, not just a classroom sequence.
+        </p>
+      </div>
+
+      <div class="mini-card">
+        <h3>Professional development</h3>
+        <p>
+          Participants strengthen presentation skills, writing, collaboration, and research habits
+          that matter for graduate school, postdoctoral positions, and long-term careers.
+        </p>
+      </div>
+
+      <div class="mini-card">
+        <h3>Multiple entry points</h3>
+        <p>
+          The RTG connects academic-year work, summer opportunities, the REU, and broader research
+          activity into a more continuous pipeline.
+        </p>
+      </div>
+
+      <div class="mini-card">
+        <h3>Fast-moving applications</h3>
+        <p>
+          The mathematics in the RTG connects to urgent areas including cybersecurity,
+          resilient infrastructure, and quantum information science.
+        </p>
+      </div>
+
+      <div class="mini-card">
+        <h3>Collaborative growth</h3>
+        <p>
+          Because the program spans multiple levels, trainees learn not only from mentors
+          but also by mentoring others and contributing to the development of the group.
+        </p>
+      </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <main>
-    <section class="section rtg-intro">
-      <div class="container">
-        <div class="rtg-intro-card">
-          <p class="eyebrow green">Overview</p>
-          <h2>Building a durable Applied Algebra ecosystem</h2>
-          <p>
-            The NSF Research Training Group in Applied Algebra at the University of South Florida
-            is designed to strengthen research, training, and community-building at the interface
-            of algebra and modern information technology. The RTG focuses on three tightly connected
-            areas — cryptography, coding theory, and quantum computing — while creating a research
-            culture in which students advance through sustained mentoring rather than isolated experiences.
-          </p>
-          <p>
-            Instead of separating trainees by academic level, the RTG promotes
-            <strong>vertically integrated research teams</strong> in which undergraduates,
-            graduate students, postdoctoral associates, and faculty learn together, collaborate
-            on common mathematical problems, and develop the professional habits needed for
-            long-term success in research, teaching, and leadership.
-          </p>
-        </div>
+<section class="section">
+  <div class="container">
+    <div class="highlight-band">
+      <div class="section-head narrow" style="margin-bottom: 1rem;">
+        <p class="eyebrow green">Connected ecosystem</p>
+        <h2>Linked to the REU, outreach, and the broader USF research environment</h2>
       </div>
-    </section>
 
-    <section class="section">
-      <div class="container">
-        <div class="section-head">
-          <p class="eyebrow green">Vision</p>
-          <h2>What makes this RTG distinctive</h2>
-          <p>
-            The program builds on USF strengths in algebra, cryptography, coding theory,
-            and quantum information while integrating existing initiatives into a coherent,
-            year-round training model with national relevance.
-          </p>
-        </div>
+      <p>
+        One of the strengths of the RTG is that it builds on a larger ecosystem already active at USF:
+        the Center for Cryptographic Research, the Quantum Initiative, undergraduate certificate pathways,
+        research seminars, the REU in Cryptography and Coding Theory, and broader outreach efforts.
+      </p>
 
-        <div class="goals-grid">
-          <div class="goal-card">
-            <span class="goal-number">1</span>
-            <h3>Integrated training</h3>
-            <p>
-              Connect undergraduate, graduate, postdoctoral, and faculty activity into a unified
-              Applied Algebra research environment.
-            </p>
-          </div>
-          <div class="goal-card">
-            <span class="goal-number">2</span>
-            <h3>Habits of mind</h3>
-            <p>
-              Develop creativity, communication, collaboration, leadership, and research maturity
-              alongside technical depth.
-            </p>
-          </div>
-          <div class="goal-card">
-            <span class="goal-number">3</span>
-            <h3>Recruitment and retention</h3>
-            <p>
-              Build a supportive pathway for diverse domestic students, including groups historically
-              underrepresented in the mathematical sciences.
-            </p>
-          </div>
-          <div class="goal-card">
-            <span class="goal-number">4</span>
-            <h3>Best-practice dissemination</h3>
-            <p>
-              Share effective mentoring and training strategies through seminars, partnerships,
-              and the Florida Hub for Applied Algebra.
-            </p>
-          </div>
-          <div class="goal-card">
-            <span class="goal-number">5</span>
-            <h3>Long-term sustainability</h3>
-            <p>
-              Strengthen institutional infrastructure so the program continues to shape Applied Algebra
-              at USF well beyond a single funding cycle.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
+      <p>
+        For prospective trainees, that means there are many ways to enter, stay engaged, and keep growing.
+        The RTG is not an isolated program — it is part of a broader culture of research and training in applied algebra.
+      </p>
 
-    <section class="section section-alt rtg-pillars">
-      <div class="container">
-        <div class="section-head">
-          <p class="eyebrow green">Research pillars</p>
-          <h2>Three areas, one mathematical conversation</h2>
-          <p>
-            The RTG is organized around three pillars whose interactions create strong opportunities
-            for cross-pollination, collaborative mentoring, and mathematically rich applications.
-          </p>
-        </div>
-
-        <div class="card-grid three">
-          <article class="card">
-            <div class="card-body">
-              <div class="rtg-icon">C</div>
-              <h3>Cryptography</h3>
-              <p>
-                Research on hard algebraic and number-theoretic problems that support next-generation
-                cryptography, including quantum-resistant methods and the mathematical foundations of secure communication.
-              </p>
-            </div>
-          </article>
-
-          <article class="card">
-            <div class="card-body">
-              <div class="rtg-icon">CT</div>
-              <h3>Coding Theory</h3>
-              <p>
-                Mathematical tools for error correction, storage reliability, and code-based cryptography,
-                with attention to both foundational structure and modern computing applications.
-              </p>
-            </div>
-          </article>
-
-          <article class="card">
-            <div class="card-body">
-              <div class="rtg-icon">Q</div>
-              <h3>Quantum Computing</h3>
-              <p>
-                Quantum algorithms for algebraic problems, mathematically informed circuit design,
-                and interactions between quantum information, error correction, and computational algebra.
-              </p>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <div class="section-head">
-          <p class="eyebrow green">Training model</p>
-          <h2>A pathway from first research experience to research leadership</h2>
-          <p>
-            The RTG is built as a layered ecosystem in which each stage supports the next,
-            making mentoring an essential part of the research culture rather than a side activity.
-          </p>
-        </div>
-
-        <div class="pathway-grid">
-          <div class="path-card">
-            <span class="path-tag">Undergraduates</span>
-            <h3>Entry into research</h3>
-            <p>
-              Students are introduced to active problems through academic-year opportunities,
-              summer research, certificate pathways, seminars, and close mentoring.
-            </p>
-          </div>
-
-          <div class="path-card">
-            <span class="path-tag">Graduate students</span>
-            <h3>Research depth</h3>
-            <p>
-              Graduate trainees develop technical expertise, collaborate across the RTG,
-              and gain experience in communication, teaching, and project development.
-            </p>
-          </div>
-
-          <div class="path-card">
-            <span class="path-tag">Postdocs</span>
-            <h3>Research leadership</h3>
-            <p>
-              Postdoctoral associates help drive projects forward, mentor junior researchers,
-              and grow into independent scholars with broad professional portfolios.
-            </p>
-          </div>
-
-          <div class="path-card">
-            <span class="path-tag">Faculty network</span>
-            <h3>Collaborative mentoring</h3>
-            <p>
-              Faculty at USF and partner institutions provide mathematical guidance,
-              interdisciplinary connections, and continuity across cohorts and programs.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-alt rtg-activities">
-      <div class="container">
-        <div class="section-head">
-          <p class="eyebrow green">Signature activities</p>
-          <h2>Research, mentoring, and professional growth throughout the year</h2>
-          <p>
-            The RTG combines research activity with intentional professional development,
-            communication training, and community-building across academic levels.
-          </p>
-        </div>
-
-        <div class="card-grid three">
-          <div class="mini-card">
-            <h3>Vertically integrated teams</h3>
-            <p>
-              Collaborative research teams connect postdocs, graduate students, undergraduates,
-              and faculty around shared mathematical problems and regular interaction.
-            </p>
-          </div>
-
-          <div class="mini-card">
-            <h3>Multi-tier mentoring</h3>
-            <p>
-              Layered mentoring structures support both technical growth and belonging,
-              while helping trainees learn how to mentor others in turn.
-            </p>
-          </div>
-
-          <div class="mini-card">
-            <h3>Applied Algebra seminar</h3>
-            <p>
-              A recurring seminar creates common intellectual ground for the RTG community
-              and connects local activity with the broader research landscape.
-            </p>
-          </div>
-
-          <div class="mini-card">
-            <h3>Workshops and roundtables</h3>
-            <p>
-              Dedicated events strengthen mathematical communication, career awareness,
-              research presentation skills, and broader professional preparation.
-            </p>
-          </div>
-
-          <div class="mini-card">
-            <h3>Peer tutoring and cross-cohort support</h3>
-            <p>
-              Students learn within a culture of mutual assistance, reinforcing both mastery
-              and community across different stages of the training pipeline.
-            </p>
-          </div>
-
-          <div class="mini-card">
-            <h3>Connections to existing initiatives</h3>
-            <p>
-              The RTG builds on USF strengths including the REU site, quantum initiative,
-              undergraduate pathways, postdoctoral activity, and outreach efforts.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <div class="hub-band">
-          <div class="hub-grid">
-            <div>
-              <p class="eyebrow green">Florida Hub</p>
-              <h2>Extending Applied Algebra beyond one department</h2>
-              <p>
-                A distinctive part of the RTG vision is the creation of a
-                <strong>Florida Hub for Applied Algebra</strong> — a broader network designed
-                to connect mathematicians and collaborators across the state, including
-                faculty and students at partner institutions and minority-serving institutions.
-              </p>
-              <p>
-                The goal is not only to strengthen research ties, but also to share mentoring models,
-                training infrastructure, and best practices for recruiting and supporting the next
-                generation of researchers in strategic mathematical areas.
-              </p>
-            </div>
-
-            <div class="hub-points">
-              <div class="hub-point">
-                <h3>Statewide collaboration</h3>
-                <p>Build sustained ties among researchers in algebra, cryptography, coding theory, and quantum information.</p>
-              </div>
-              <div class="hub-point">
-                <h3>Cross-institution mentoring</h3>
-                <p>Create new bridges between students, faculty, and emerging researchers across Florida institutions.</p>
-              </div>
-              <div class="hub-point">
-                <h3>Dissemination of best practices</h3>
-                <p>Share effective approaches to retention, mentoring, and high-quality research preparation.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section rtg-audience">
-      <div class="container">
-        <div class="rtg-cta-box">
-          <div class="section-head">
-            <p class="eyebrow">Get involved</p>
-            <h2>Who the RTG is for</h2>
-            <p>
-              The RTG is designed to serve multiple audiences, from students taking their first steps
-              into research to collaborators interested in seminars, mentoring, and broader partnerships.
-            </p>
-          </div>
-
-          <div class="card-grid four">
-            <div class="mini-card">
-              <h3>Undergraduates</h3>
-              <p>Explore research pathways, seminars, mentoring, and connections with the REU and certificate ecosystem.</p>
-              <a href="reu.html">Learn more →</a>
-            </div>
-
-            <div class="mini-card">
-              <h3>Graduate students</h3>
-              <p>Join a mathematically rich environment with year-round research, mentoring, and professional development.</p>
-              <a href="people.html">Meet the faculty →</a>
-            </div>
-
-            <div class="mini-card">
-              <h3>Postdoctoral researchers</h3>
-              <p>Develop independence while contributing to a collaborative research culture and mentoring pipeline.</p>
-              <a href="research.html">Explore research areas →</a>
-            </div>
-
-            <div class="mini-card">
-              <h3>Collaborators and visitors</h3>
-              <p>Connect through seminars, workshops, interdisciplinary projects, and the Florida Hub vision.</p>
-              <a href="programs.html">View programs →</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <p>USF Cryptography Center</p>
-      <p>NSF RTG in Applied Algebra at USF</p>
+      <p class="section-link" style="margin-bottom: 0;">
+        <a href="reu.html">Visit the REU page →</a>
+      </p>
     </div>
-  </footer>
+  </div>
+</section>
+
+<section class="section section-alt" id="opportunities">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow green">Opportunities</p>
+      <h2>Who should look closely at this program?</h2>
+      <p>
+        The RTG is meant to serve people at different stages. The page should make that immediately clear.
+      </p>
+    </div>
+
+    <div class="opportunity-grid">
+      <div class="opportunity-card">
+        <h3>Undergraduates</h3>
+        <p>
+          Students interested in mathematics, cryptography, coding theory, or quantum information
+          can use the RTG as a gateway into serious research through seminars, academic-year projects,
+          and the REU pipeline.
+        </p>
+        <a href="reu.html">See undergraduate research opportunities →</a>
+      </div>
+
+      <div class="opportunity-card">
+        <h3>Graduate students</h3>
+        <p>
+          Graduate trainees benefit from a stronger research community, broader mentoring,
+          and sustained exposure to active problems across applied algebra.
+        </p>
+        <a href="people.html">Meet faculty and mentors →</a>
+      </div>
+
+      <div class="opportunity-card">
+        <h3>Postdocs</h3>
+        <p>
+          Postdoctoral researchers can develop independence while mentoring across levels,
+          participating in collaborative projects, and helping shape the next generation of trainees.
+        </p>
+        <a href="research.html">See research areas →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container split">
+    <div>
+      <div class="section-head">
+        <p class="eyebrow green">Beyond USF</p>
+        <h2>A broader Applied Algebra network in Florida</h2>
+      </div>
+
+      <p>
+        The RTG also contributes to a wider vision for Applied Algebra in Florida by helping create
+        connections across institutions, seminars, and collaborative activities.
+      </p>
+
+      <p>
+        For trainees, this matters because strong networks create more opportunities:
+        more speakers, more research conversations, more collaborations, and more visibility
+        for work done at USF.
+      </p>
+    </div>
+
+    <aside class="rtg-callout">
+      <h3>Why this matters to you</h3>
+      <ul>
+        <li>Access to a broader mathematical network</li>
+        <li>Interaction with visitors and outside speakers</li>
+        <li>More opportunities for collaboration and visibility</li>
+        <li>A research culture that extends beyond one local group</li>
+      </ul>
+    </aside>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <p>USF Cryptography Center</p>
+    <p>NSF RTG in Applied Algebra at USF</p>
+  </div>
+</footer>
+
 </body>
 </html>
