@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Applied Algebra Days | USF Cryptography Center</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .aad-subnav {
+      background: white;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .aad-subnav-inner {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      padding: 0.95rem 0;
+      font-weight: 700;
+    }
+
+    .aad-subnav-inner a {
+      color: var(--ink);
+      text-decoration: none;
+    }
+
+    .aad-subnav-inner a:hover,
+    .aad-subnav-inner a.active {
+      color: var(--green);
+    }
+
+    .aad-hero .hero-overlay {
+      background: linear-gradient(90deg, rgba(9,17,21,0.72), rgba(9,17,21,0.34));
+    }
+
+    .aad-hero .lead {
+      max-width: 50rem;
+    }
+
+    .aad-hero .hero-overlay {
+        background: linear-gradient(
+        90deg,
+        rgba(9,17,21,0.85),
+        rgba(11,107,74,0.25)
+    );
+    }
+
+    .aad-current {
+      background: linear-gradient(135deg, rgba(11,107,74,0.08), rgba(11,107,74,0.03));
+      border: 1px solid var(--line);
+      border-radius: 26px;
+      padding: 1.8rem;
+      box-shadow: 0 10px 28px rgba(15, 27, 36, 0.05);
+    }
+
+    .aad-current-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 1.5rem;
+      align-items: center;
+    }
+
+    .aad-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin: 1rem 0 1.2rem;
+    }
+
+    .aad-meta span {
+      display: inline-block;
+      padding: 0.38rem 0.75rem;
+      border-radius: 999px;
+      background: rgba(11,107,74,0.10);
+      color: var(--green);
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+
+    .aad-action-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.9rem;
+      margin-top: 1.3rem;
+    }
+
+    .aad-current img {
+      width: 100%;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(15, 27, 36, 0.08);
+      object-fit: cover;
+      aspect-ratio: 16 / 10;
+    }
+
+    .aad-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.4rem;
+    }
+
+    .aad-card {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 1.35rem;
+      box-shadow: 0 10px 30px rgba(15, 27, 36, 0.06);
+      height: 100%;
+    }
+
+    .aad-card h3 {
+      margin: 0 0 0.45rem;
+      font-size: 1.15rem;
+    }
+
+    .aad-card .meta {
+      color: var(--green);
+      font-weight: 700;
+      margin-bottom: 0.7rem;
+      font-size: 0.94rem;
+    }
+
+    .aad-card p {
+      margin-bottom: 1rem;
+      color: var(--muted);
+    }
+
+    .aad-card a {
+      font-weight: 700;
+      color: var(--green);
+      text-decoration: none;
+    }
+
+    .series-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.4rem;
+    }
+
+    .series-card {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(15, 27, 36, 0.06);
+    }
+
+    .series-card img {
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      object-fit: cover;
+      display: block;
+    }
+
+    .series-card .body {
+      padding: 1.2rem 1.2rem 1.35rem;
+    }
+
+    .archive-note {
+      background: #fff;
+      border: 1px dashed var(--line);
+      border-radius: 20px;
+      padding: 1.1rem 1.2rem;
+      color: var(--muted);
+    }
+
+    @media (max-width: 980px) {
+      .aad-current-grid,
+      .aad-grid,
+      .series-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .aad-current-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .aad-grid,
+      .series-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header class="site-header compact">
+  <div class="container nav">
+    <a class="brand" href="index.html">
+      <img src="assets/images/logo-padlock.png" alt="USF Cryptography Center logo">
+      <span>USF Cryptography Center</span>
+    </a>
+
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="research.html">Research</a>
+      <a href="people.html">People</a>
+      <a href="programs.html">Programs</a>
+      <a href="rtg.html">RTG</a>
+      <a href="reu.html">REU</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero aad-hero" style="min-height: 56vh;">
+  <img class="hero-image" src="assets/images/AAD-banner.jpg" alt="Applied Algebra Days workshop banner">
+  <div class="hero-overlay"></div>
+  <div class="container hero-content">
+    <div class="eyebrow">RTG Workshop Series</div>
+    <h1>Applied Algebra Days</h1>
+    <p class="lead">
+      A recurring workshop series at USF bringing together researchers and trainees in
+      <strong>cryptography</strong>, <strong>coding theory</strong>, <strong>quantum computing</strong>,
+      and neighboring areas of applied algebra.
+    </p>
+    <div class="hero-actions">
+      <a class="button primary" href="aad-home.html">Current Edition</a>
+      <a class="button ghost" href="#archive">Past Programs</a>
+    </div>
+  </div>
+</section>
+
+<section class="aad-subnav">
+  <div class="container">
+    <nav class="aad-subnav-inner">
+      <a href="aad.html" class="active">Series Home</a>
+      <a href="aad-home.html">Current Edition</a>
+      <a href="aad-program.html">Program</a>
+      <a href="aad-info.html">Practical Info</a>
+      <a href="aad-conduct.html">Code of Conduct</a>
+      <a href="aad-contact.html">Contact</a>
+    </nav>
+  </div>
+</section>
+
+<main>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow green">About the series</p>
+      <h2>Workshops that connect research and community</h2>
+      <p>
+        Applied Algebra Days is part of the broader RTG ecosystem in Applied Algebra at USF.
+        Each edition brings together faculty, postdoctoral scholars, graduate students,
+        and external participants for focused days of talks, discussion, and community-building.
+      </p>
+    </div>
+
+    <div class="series-grid">
+      <div class="series-card">
+        <img src="assets/images/pqc.jpg" alt="Post-quantum cryptography and algebraic security">
+        <div class="body">
+          <h3>Research-focused</h3>
+          <p>
+            Programs are built around active mathematical directions in cryptography, coding theory,
+            computational algebra, and quantum information.
+          </p>
+        </div>
+      </div>
+
+      <div class="series-card">
+        <img src="assets/images/rtg-group.jpg" alt="Research community at USF">
+        <div class="body">
+          <h3>Community-oriented</h3>
+          <p>
+            The workshops are designed not only to showcase research, but also to help build a
+            durable Applied Algebra community at USF and beyond.
+          </p>
+        </div>
+      </div>
+
+      <div class="series-card">
+        <img src="assets/images/rtg-seminar.jpg" alt="Seminar and workshop participation">
+        <div class="body">
+          <h3>Trainee-friendly</h3>
+          <p>
+            Students and postdocs benefit from exposure to current topics, leading researchers,
+            and a welcoming workshop environment connected to the RTG.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow green">Current edition</p>
+      <h2>The workshop currently featured on the site</h2>
+      <p>
+        These pages always point to the current or upcoming edition of Applied Algebra Days.
+      </p>
+    </div>
+
+    <div class="aad-current">
+      <div class="aad-current-grid">
+        <div>
+          <h3 style="font-size: 1.8rem; margin-bottom: 0.5rem;">Applied Algebra Days #4</h3>
+          <p>
+            The current edition features talks and activities at the intersection of
+            cryptography, coding theory, and quantum computing, with an emphasis on bringing
+            together researchers across fields and career stages.
+          </p>
+
+          <div class="aad-meta">
+            <span>Dates TBD</span>
+            <span>University of South Florida</span>
+            <span>RTG Workshop Series</span>
+          </div>
+
+          <p>
+            Visit the current-edition pages for the latest workshop description, scientific program,
+            logistical information, code of conduct, and organizer contact details.
+          </p>
+
+          <div class="aad-action-row">
+            <a class="button primary" href="aad-home.html">Workshop Home</a>
+            <a class="button secondary" href="aad-program.html">Program</a>
+            <a class="button secondary" href="aad-info.html">Practical Info</a>
+            <a class="button secondary" href="aad-contact.html">Contact</a>
+          </div>
+        </div>
+
+        <div>
+          <img src="assets/images/computational-nt.jpg" alt="Applied Algebra Days visual">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="archive">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow green">Archive</p>
+      <h2>Previous editions</h2>
+      <p>
+        Past editions are archived through their scientific programs so visitors can get a sense
+        of the workshop’s themes, speakers, and overall mathematical scope.
+      </p>
+    </div>
+
+    <div class="aad-grid">
+      <article class="aad-card">
+        <h3>Applied Algebra Days #3</h3>
+        <div class="meta">June 19–21, 2026 · USF</div>
+        <p>
+          Talks in cryptography, coding theory, and quantum computing, with sessions organized
+          around major Applied Algebra directions.
+        </p>
+        <a href="aad-3.html">View archived program →</a>
+      </article>
+
+      <article class="aad-card">
+        <h3>Applied Algebra Days #2</h3>
+        <div class="meta">Fall 2025 · USF</div>
+        <p>
+          A previous edition of the workshop series. Archive this card with the correct dates and
+          short thematic description once finalized.
+        </p>
+        <a href="aad-2.html">View archived program →</a>
+      </article>
+
+      <article class="aad-card">
+        <h3>Applied Algebra Days #1</h3>
+        <div class="meta">Spring 2025 · USF</div>
+        <p>
+          The first edition of the series. Use this card to preserve visibility into the workshop’s
+          early speakers, topics, and community-building goals.
+        </p>
+        <a href="aad-1.html">View archived program →</a>
+      </article>
+    </div>
+
+    <div class="archive-note" style="margin-top: 1.4rem;">
+      The archive pages preserve past programs only. The main workshop pages
+      (<code>aad-home.html</code>, <code>aad-program.html</code>, <code>aad-info.html</code>,
+      <code>aad-conduct.html</code>, and <code>aad-contact.html</code>) always refer to the current edition.
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow green">Connection to the RTG</p>
+      <h2>Part of a broader Applied Algebra ecosystem</h2>
+      <p>
+        Applied Algebra Days is one expression of the RTG’s year-round research culture. It complements
+        the seminar program, mentoring structures, student training pathways, and broader workshop activity
+        of the RTG in Applied Algebra at USF.
+      </p>
+    </div>
+
+    <div class="aad-grid">
+      <article class="aad-card">
+        <h3>RTG Overview</h3>
+        <p>Learn more about the broader training and research environment that supports the workshop series.</p>
+        <a href="rtg.html">Visit RTG page →</a>
+      </article>
+
+      <article class="aad-card">
+        <h3>Seminars</h3>
+        <p>Explore the recurring intellectual life of the RTG beyond workshop-based programming.</p>
+        <a href="rtg-seminars.html">View seminars →</a>
+      </article>
+
+      <article class="aad-card">
+        <h3>Workshops</h3>
+        <p>Return to the RTG workshop page for the broader picture of special events and research gatherings.</p>
+        <a href="rtg-workshops.html">Back to workshops →</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <p>USF Cryptography Center</p>
+    <p>Applied Algebra Days · RTG in Applied Algebra</p>
+  </div>
+</footer>
+
+</body>
+</html>
