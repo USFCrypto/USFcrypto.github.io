@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Applied Algebra Days | Program</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .aad-subnav {
+      background: white;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+    .aad-subnav-inner {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      padding: 0.95rem 0;
+      font-weight: 700;
+    }
+    .aad-subnav-inner a {
+      color: var(--ink);
+      text-decoration: none;
+    }
+    .aad-subnav-inner a:hover,
+    .aad-subnav-inner a.active {
+      color: var(--green);
+    }
+    .aad-hero .hero-overlay {
+      background: linear-gradient(90deg, rgba(9,17,21,0.82), rgba(11,107,74,0.25));
+    }
+
+    .aad-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.9rem;
+      margin-top: 1.5rem;
+    }
+    .program-day {
+      margin-top: 2rem;
+    }
+    .program-day h2 {
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--line);
+    }
+    .session-card {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 1.25rem 1.3rem;
+      box-shadow: 0 10px 30px rgba(15,27,36,0.06);
+      margin-bottom: 1rem;
+    }
+    .session-card h3 {
+      margin: 0 0 0.35rem;
+    }
+    .session-meta {
+      color: var(--green);
+      font-weight: 700;
+      margin-bottom: 0.8rem;
+    }
+    .session-card ul {
+      margin: 0;
+      padding-left: 1.2rem;
+    }
+    .session-card li {
+      margin-bottom: 0.45rem;
+    }
+    .program-note {
+      background: linear-gradient(135deg, rgba(11,107,74,0.08), rgba(11,107,74,0.03));
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 1.2rem 1.3rem;
+    }
+  </style>
+</head>
+<body>
+
+<header class="site-header compact">
+  <div class="container nav">
+    <a class="brand" href="index.html">
+      <img src="assets/images/logo-padlock.png" alt="USF Cryptography Center logo">
+      <span>USF Cryptography Center</span>
+    </a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="research.html">Research</a>
+      <a href="people.html">People</a>
+      <a href="programs.html">Programs</a>
+      <a href="rtg.html">RTG</a>
+      <a href="reu.html">REU</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero aad-hero" style="min-height:56vh;">
+  <img class="hero-image" src="assets/images/AAD-banner.jpg" alt="Applied Algebra Days banner">
+  <div class="hero-overlay"></div>
+  <div class="container hero-content">
+    <div class="eyebrow">RTG Workshop Series</div>
+    <h1>Applied Algebra Days IV</h1>
+    <p class="lead">
+      <strong>University of South Florida</strong>,<br> <strong>June 10-12 2026</strong>.
+    </p>
+    <div class="hero-actions">
+      <a class="button primary" href="aad-program.html">View Program</a>
+      <a class="button ghost" href="aad-info.html">Practical Info</a>
+    </div>
+  </div>
+</section>
+
+<section class="aad-subnav">
+  <div class="container">
+    <nav class="aad-subnav-inner">
+      <a href="aad.html">Series Home</a>
+      <a href="aad-home.html">Current Edition</a>
+      <a href="aad-program.html" class="active">Program</a>
+      <a href="aad-info.html">Practical Info</a>
+      <a href="aad-conduct.html">Code of Conduct</a>
+      <a href="aad-contact.html">Contact</a>
+    </nav>
+  </div>
+</section>
+
+<main>
+  <section class="section">
+    <div class="container">
+      <div class="program-note">
+        <strong>Note:</strong> Replace the placeholder sections below with the finalized schedule for the current edition.
+        For archived workshops, copy this page into `aad-n.html` before editing for the next event.
+      </div>
+
+      <div class="program-day">
+        <h2>Thursday, Date TBD</h2>
+
+        <div class="session-card">
+          <h3>Opening Session</h3>
+          <div class="session-meta">Chair: TBD · 9:00am–10:30am</div>
+          <ul>
+            <li>Speaker Name — Talk Title</li>
+            <li>Speaker Name — Talk Title</li>
+          </ul>
+        </div>
+
+        <div class="session-card">
+          <h3>Algebra and Cryptography</h3>
+          <div class="session-meta">Chair: TBD · 11:00am–12:30pm</div>
+          <ul>
+            <li>Speaker Name — Talk Title</li>
+            <li>Speaker Name — Talk Title</li>
+            <li>Speaker Name — Talk Title</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="program-day">
+        <h2>Friday, Date TBD</h2>
+
+        <div class="session-card">
+          <h3>Coding Theory</h3>
+          <div class="session-meta">Chair: TBD · 9:00am–11:00am</div>
+          <ul>
+            <li>Speaker Name — Talk Title</li>
+            <li>Speaker Name — Talk Title</li>
+            <li>Speaker Name — Talk Title</li>
+          </ul>
+        </div>
+
+        <div class="session-card">
+          <h3>Quantum Computing</h3>
+          <div class="session-meta">Chair: TBD · 1:30pm–3:30pm</div>
+          <ul>
+            <li>Speaker Name — Talk Title</li>
+            <li>Speaker Name — Talk Title</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="program-day">
+        <h2>Saturday, Date TBD</h2>
+
+        <div class="session-card">
+          <h3>Closing Talks and Discussion</h3>
+          <div class="session-meta">Chair: TBD · 9:00am–11:30am</div>
+          <ul>
+            <li>Speaker Name — Talk Title</li>
+            <li>Speaker Name — Talk Title</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <p>USF Cryptography Center</p>
+    <p>Applied Algebra Days · RTG in Applied Algebra</p>
+  </div>
+</footer>
+
+</body>
+</html>

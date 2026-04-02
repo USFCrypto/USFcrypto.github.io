@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RTG Applied Algebra Seminar | USF Cryptography Center</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .rtg-subnav {
+      background: white;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .rtg-subnav-inner {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      padding: 0.95rem 0;
+      font-weight: 700;
+    }
+
+    .rtg-subnav-inner a {
+      color: var(--ink);
+      text-decoration: none;
+    }
+
+    .rtg-subnav-inner a:hover,
+    .rtg-subnav-inner a.active {
+      color: var(--green);
+    }
+
+    .seminar-hero {
+      min-height: 56vh;
+    }
+
+    .seminar-hero .hero-overlay {
+      background: linear-gradient(90deg, rgba(9,17,21,0.84), rgba(11,107,74,0.25));
+    }
+
+    .seminar-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin-top: 1.1rem;
+    }
+
+    .seminar-meta span {
+      display: inline-block;
+      padding: 0.4rem 0.8rem;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.14);
+      color: white;
+      font-weight: 700;
+      font-size: 0.92rem;
+      border: 1px solid rgba(255,255,255,0.18);
+    }
+
+    .intro-band {
+      background: linear-gradient(135deg, rgba(11,107,74,0.08), rgba(11,107,74,0.03));
+      border: 1px solid var(--line);
+      border-radius: 26px;
+      padding: 1.8rem;
+      box-shadow: 0 10px 28px rgba(15,27,36,0.05);
+    }
+
+    .schedule-wrap {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .term-card {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(15,27,36,0.06);
+    }
+
+    .term-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      width: 100%;
+      padding: 1.15rem 1.3rem;
+      background: white;
+      border: 0;
+      cursor: pointer;
+      text-align: left;
+      font: inherit;
+      font-weight: 800;
+      color: var(--ink);
+    }
+
+    .term-header:hover {
+      background: rgba(11,107,74,0.03);
+    }
+
+    .term-header .term-label {
+      font-size: 1.08rem;
+    }
+
+    .term-header .term-symbol {
+      color: var(--green);
+      font-size: 1.35rem;
+      line-height: 1;
+      flex-shrink: 0;
+    }
+
+    .term-body {
+      padding: 0 1.3rem 1.3rem;
+      border-top: 1px solid var(--line);
+    }
+
+    .talk-item {
+      padding: 1.1rem 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .talk-item:last-child {
+      border-bottom: 0;
+      padding-bottom: 0.2rem;
+    }
+
+    .talk-toggle {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.7rem;
+      width: 100%;
+      background: transparent;
+      border: 0;
+      padding: 0;
+      cursor: pointer;
+      text-align: left;
+      font: inherit;
+      color: var(--ink);
+    }
+
+    .talk-toggle:hover .talk-title {
+      color: var(--green);
+    }
+
+    .talk-symbol {
+      color: var(--green);
+      font-size: 1.2rem;
+      line-height: 1.2;
+      flex-shrink: 0;
+      width: 1rem;
+      text-align: center;
+      margin-top: 0.05rem;
+    }
+
+    .talk-heading {
+      flex: 1;
+    }
+
+    .talk-title {
+      font-weight: 800;
+      margin-bottom: 0.18rem;
+      transition: color 0.2s ease;
+    }
+
+    .talk-speaker {
+      color: var(--green);
+      font-weight: 700;
+      font-size: 0.96rem;
+    }
+
+    .talk-details {
+      margin-left: 1.7rem;
+      margin-top: 0.8rem;
+      color: var(--muted);
+    }
+
+    .talk-details p {
+      margin: 0 0 0.6rem;
+    }
+
+    .talk-details ul {
+      margin: 0.4rem 0 0;
+      padding-left: 1.1rem;
+    }
+
+    .talk-details li {
+      margin-bottom: 0.35rem;
+    }
+
+    .seminar-info-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.4rem;
+    }
+
+    .seminar-info-card {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 1.35rem;
+      box-shadow: 0 10px 30px rgba(15,27,36,0.06);
+    }
+
+    .seminar-info-card h3 {
+      margin: 0 0 0.55rem;
+    }
+
+    .seminar-info-card p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .archive-note {
+      background: #fff;
+      border: 1px dashed var(--line);
+      border-radius: 20px;
+      padding: 1.1rem 1.2rem;
+      color: var(--muted);
+    }
+
+    @media (max-width: 900px) {
+      .seminar-info-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header class="site-header compact">
+  <div class="container nav">
+    <a class="brand" href="index.html">
+      <img src="assets/images/logo-padlock.png" alt="USF Cryptography Center logo">
+      <span>USF Cryptography Center</span>
+    </a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="research.html">Research</a>
+      <a href="people.html">People</a>
+      <a href="programs.html">Programs</a>
+      <a href="rtg.html">RTG</a>
+      <a href="reu.html">REU</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero seminar-hero">
+  <img class="hero-image" src="assets/images/rtg-group.jpg" alt="RTG Applied Algebra Seminar banner">
+  <div class="hero-overlay"></div>
+  <div class="container hero-content">
+    <div class="eyebrow">RTG in Applied Algebra</div>
+    <h1>Applied Algebra Seminar</h1>
+    <p class="lead">
+      A recurring seminar series at USF devoted to cryptography, coding theory,
+      quantum computing, and related areas of applied algebra.
+    </p>
+    <div class="hero-actions">
+      <a class="button primary" href="#schedule">Current Schedule</a>
+      <a class="button ghost" href="#details">Seminar Details</a>
+    </div>
+  </div>
+</section>
+
+<section class="rtg-subnav">
+  <div class="container">
+    <nav class="rtg-subnav-inner">
+      <a href="rtg.html">Overview</a>
+      <a href="rtg-members.html">Members</a>
+      <a href="rtg-seminars.html" class="active">Seminars</a>
+      <a href="aad.html">Workshops</a>
+      <a href="rtg-application.html">Application</a>
+    </nav>
+  </div>
+</section>
+
+<main>
+  <section class="section">
+    <div class="container">
+      <div class="intro-band">
+        <p class="eyebrow green">About the seminar</p>
+        <h2>A recurring intellectual home for the RTG</h2>
+        <p>
+          The RTG Applied Algebra Seminar is one of the regular gathering points of the
+          RTG in Applied Algebra at USF. It supports the RTG’s vertically integrated
+          research culture by bringing together faculty, postdoctoral scholars, graduate
+          students, and advanced undergraduates around current topics in cryptography,
+          coding theory, quantum computing, and neighboring mathematical areas.
+        </p>
+        <p>
+          Some talks are broadly expository, while others are closer to active research.
+          The goal is both to expose participants to important ideas and to build a
+          sustained community of discussion and collaboration.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt" id="schedule">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow green">Schedule</p>
+        <h2>Current and recent terms</h2>
+        <p>
+          Expand a term to browse themes, speakers, and session descriptions.
+        </p>
+      </div>
+
+      <div class="schedule-wrap">
+
+        <div class="term-card">
+          <button class="term-header" type="button" aria-expanded="true" aria-controls="term-fall-25">
+            <span class="term-label">Fall 2025</span>
+            <span class="term-symbol">−</span>
+          </button>
+          <div class="term-body" id="term-fall-25">
+
+            <div class="talk-item">
+              <button class="talk-toggle" type="button" aria-expanded="true" aria-controls="talk-code-based">
+                <span class="talk-symbol">−</span>
+                <div class="talk-heading">
+                  <div class="talk-title">Code-Based Cryptography</div>
+                  <div class="talk-speaker">Freeman Slaughter</div>
+                </div>
+              </button>
+              <div class="talk-details" id="talk-code-based">
+                <p>
+                  This mini-series introduces the basics of code-based cryptography and the
+                  mathematical background needed to understand modern digital signature constructions.
+                </p>
+                <ul>
+                  <li><strong>Friday September 5th @ 4pm in CMC 120:</strong> basics of linear codes, McEliece cryptosystem, Niederreiter cryptosystem.</li>
+                  <li><strong>Friday September 12th @ 4pm in CMC 120:</strong> equivalence of codes, zero-knowledge proofs, CROSS.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="talk-item">
+              <button class="talk-toggle" type="button" aria-expanded="false" aria-controls="talk-code-equivalence">
+                <span class="talk-symbol">+</span>
+                <div class="talk-heading">
+                  <div class="talk-title">The Code Equivalence Problem</div>
+                  <div class="talk-speaker">Alexandra Veliche Hostetler</div>
+                </div>
+              </button>
+              <div class="talk-details" id="talk-code-equivalence" hidden>
+                <p>
+                  Add description, dates, and location details here.
+                </p>
+              </div>
+            </div>
+
+            <div class="talk-item">
+              <button class="talk-toggle" type="button" aria-expanded="false" aria-controls="talk-isogenies">
+                <span class="talk-symbol">+</span>
+                <div class="talk-heading">
+                  <div class="talk-title">Isogenies of Elliptic Curves</div>
+                  <div class="talk-speaker">W. Ghantous and J.-F. Biasse</div>
+                </div>
+              </button>
+              <div class="talk-details" id="talk-isogenies" hidden>
+                <p>
+                  Add description, dates, and location details here.
+                </p>
+              </div>
+            </div>
+
+            <div class="talk-item">
+              <button class="talk-toggle" type="button" aria-expanded="false" aria-controls="talk-ldpc">
+                <span class="talk-symbol">+</span>
+                <div class="talk-heading">
+                  <div class="talk-title">Classical and Quantum LDPC Codes</div>
+                  <div class="talk-speaker">A. Fonseca Gomez and T. Pllaha</div>
+                </div>
+              </button>
+              <div class="talk-details" id="talk-ldpc" hidden>
+                <p>
+                  Add description, dates, and location details here.
+                </p>
+              </div>
+            </div>
+
+            <div class="talk-item">
+              <button class="talk-toggle" type="button" aria-expanded="false" aria-controls="talk-generic-group">
+                <span class="talk-symbol">+</span>
+                <div class="talk-heading">
+                  <div class="talk-title">Generic Group Model, Classical and Quantum</div>
+                  <div class="talk-speaker">Aaram Yun</div>
+                </div>
+              </button>
+              <div class="talk-details" id="talk-generic-group" hidden>
+                <p>
+                  Add description, dates, and location details here.
+                </p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="term-card">
+          <button class="term-header" type="button" aria-expanded="false" aria-controls="term-spring-26">
+            <span class="term-label">Spring 2026</span>
+            <span class="term-symbol">+</span>
+          </button>
+          <div class="term-body" id="term-spring-26" hidden>
+            <div class="talk-item">
+              <button class="talk-toggle" type="button" aria-expanded="false" aria-controls="talk-spring-placeholder">
+                <span class="talk-symbol">+</span>
+                <div class="talk-heading">
+                  <div class="talk-title">Spring Series Placeholder</div>
+                  <div class="talk-speaker">Speaker(s) TBD</div>
+                </div>
+              </button>
+              <div class="talk-details" id="talk-spring-placeholder" hidden>
+                <p>
+                  Add the spring schedule here when ready.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="archive-note" style="margin-top: 1.4rem;">
+        As the seminar grows, this page can also serve as a light archive by semester,
+        making it easy for prospective students and visitors to see the range of topics
+        covered by the RTG.
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="details">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow green">Seminar details</p>
+        <h2>Participation and format</h2>
+      </div>
+
+      <div class="seminar-info-grid">
+        <div class="seminar-info-card">
+          <h3>Format</h3>
+          <p>
+            The seminar may include expository mini-courses, topic sequences, and research-facing talks,
+            depending on the term and speaker.
+          </p>
+        </div>
+
+        <div class="seminar-info-card">
+          <h3>Audience</h3>
+          <p>
+            The intended audience includes faculty, postdoctoral scholars, graduate students,
+            and advanced undergraduates connected to the RTG and neighboring research areas.
+          </p>
+        </div>
+
+        <div class="seminar-info-card">
+          <h3>Location and time</h3>
+          <p>
+            Add the regular day/time/location here if you want this page to function as the primary
+            seminar information page for visitors.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <p>USF Cryptography Center</p>
+    <p>RTG Applied Algebra Seminar</p>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('.term-header').forEach((button) => {
+    button.addEventListener('click', () => {
+      const targetId = button.getAttribute('aria-controls');
+      const panel = document.getElementById(targetId);
+      const expanded = button.getAttribute('aria-expanded') === 'true';
+
+      button.setAttribute('aria-expanded', String(!expanded));
+      panel.hidden = expanded;
+      button.querySelector('.term-symbol').textContent = expanded ? '+' : '−';
+    });
+  });
+
+  document.querySelectorAll('.talk-toggle').forEach((button) => {
+    button.addEventListener('click', () => {
+      const targetId = button.getAttribute('aria-controls');
+      const panel = document.getElementById(targetId);
+      const expanded = button.getAttribute('aria-expanded') === 'true';
+
+      button.setAttribute('aria-expanded', String(!expanded));
+      panel.hidden = expanded;
+      button.querySelector('.talk-symbol').textContent = expanded ? '+' : '−';
+    });
+  });
+</script>
+
+</body>
+</html>

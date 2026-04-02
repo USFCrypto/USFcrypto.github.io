@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Applied Algebra Days | Practical Information</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .aad-subnav {
+      background: white;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+    .aad-subnav-inner {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      padding: 0.95rem 0;
+      font-weight: 700;
+    }
+    .aad-subnav-inner a {
+      color: var(--ink);
+      text-decoration: none;
+    }
+    .aad-subnav-inner a:hover,
+    .aad-subnav-inner a.active {
+      color: var(--green);
+    }
+    .aad-hero .hero-overlay {
+      background: linear-gradient(90deg, rgba(9,17,21,0.82), rgba(11,107,74,0.25));
+    }
+    .info-row {
+  display: grid;
+  grid-template-columns: 1fr 0.95fr;
+  gap: 1.5rem;
+  align-items: stretch;
+  margin-top: 2rem;
+}
+
+.info-row.reverse {
+  grid-template-columns: 0.95fr 1fr;
+}
+
+.info-text,
+.info-image-card {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  box-shadow: 0 10px 30px rgba(15,27,36,0.06);
+  overflow: hidden;
+}
+
+.info-text {
+  padding: 1.3rem;
+}
+
+.info-text h2 {
+  margin-top: 0;
+}
+
+.info-image-card {
+  min-height: 100%;
+  display: flex;
+}
+
+.info-image-card img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+  </style>
+</head>
+<body>
+
+<header class="site-header compact">
+  <div class="container nav">
+    <a class="brand" href="index.html">
+      <img src="assets/images/logo-padlock.png" alt="USF Cryptography Center logo">
+      <span>USF Cryptography Center</span>
+    </a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="research.html">Research</a>
+      <a href="people.html">People</a>
+      <a href="programs.html">Programs</a>
+      <a href="rtg.html">RTG</a>
+      <a href="reu.html">REU</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero aad-hero" style="min-height:46vh;">
+  <img class="hero-image" src="assets/images/AAD-banner.jpg" alt="Applied Algebra Days banner">
+  <div class="hero-overlay"></div>
+  <div class="container hero-content">
+    <div class="eyebrow">RTG Workshop Series</div>
+    <h1>Applied Algebra Days IV</h1>
+    <p class="lead">
+      <strong>University of South Florida</strong>,<br> <strong>June 10-12 2026</strong>.
+    </p>
+    <div class="hero-actions">
+      <a class="button primary" href="aad-program.html">View Program</a>
+      <a class="button ghost" href="aad-info.html">Practical Info</a>
+    </div>
+  </div>
+</section>
+
+<section class="aad-subnav">
+  <div class="container">
+    <nav class="aad-subnav-inner">
+      <a href="aad.html">Series Home</a>
+      <a href="aad-home.html">Current Edition</a>
+      <a href="aad-program.html">Program</a>
+      <a href="aad-info.html" class="active">Practical Info</a>
+      <a href="aad-conduct.html">Code of Conduct</a>
+      <a href="aad-contact.html">Contact</a>
+    </nav>
+  </div>
+</section>
+
+<main>
+  <section class="section">
+    <div class="container">
+      <div class="info-row">
+        <div class="info-text">
+          <h2>Lodging</h2>
+          <p>
+           Invited participants to the Applied Algebra Days are housed 
+           just south of the Tampa campus. Part of our group is at the 
+           Home2Suites hotel while the rest is at the La Quinta Inn & Suites. 
+           Both locations offer complimentary breakfast, and have a pool. 
+           Check their respective websites for a complete list of amenities. 
+          </p>
+        </div>
+        <div class="info-image-card">
+          <img src="assets/images/AAD-accomodation.jpg" alt="Workshop logistics visual">
+        </div>
+      </div>
+
+      <div class="info-row reverse">
+        <div class="info-image-card">
+          <img src="assets/images/AAD-venue.jpg" alt="Venue visual">
+        </div>
+        <div class="info-text">
+          <h2>Workshop Venue</h2>
+          <p>
+            The talks of our workshop will take place at the CMC building of the USF. 
+            Thursday and Friday, talks will be delivered in CMC 147 
+            (a room that belongs to the Advanced Visualization Center) 
+            while the Saturday talks will happen in CMC 141 (which is a regular classroom) . 
+            Both rooms are in the west aisle of the CMC building. They are an approximate 15min 
+            walk away from the hotels. 
+          </p>
+          <p>
+            <strong>Important:</strong> Very important: unfortunately, drinks and food are not allowed in CMC 147.
+          </p>
+        </div>
+      </div>
+
+      <div class="info-row">
+        <div class="info-text">
+          <h2>Meals and Social Events</h2>
+          <p>
+            To facilitate access to restaurants, we will organize rides to the University 
+            Square Mall on Friday and Saturday evening. From the mall’s 
+            parking lot, one can immediately access a variety of restaurants: 
+            Vietnamese, Indian, Chinese noodle house, Mexican, Suhis, Irish pub, etc … 
+            Rides will leave from the CMC parking lot, at a time TBD. 
+            If you miss the ride, the mall is a 25 min walk away from the CMC building. 
+          </p>
+          <p>
+            Thursday evening, we will be holding a welcome reception a World of Beer. 
+             We will organize rides to to/from the venue. If you miss the ride, 
+             WOB is a 25 min walk from CMC, and a 15 min walk to the hotels. 
+          </p>
+        </div>
+        <div class="info-image-card">
+          <img src="assets/images/AAD-meals.jpg" alt="Workshop dinner or gathering visual">
+        </div>
+      </div>
+
+      <div class="info-row reverse">
+        <div class="info-image-card">
+          <img src="assets/images/AAD-activities.jpg" alt="USF campus or community visual">
+        </div>
+        <div class="info-text">
+          <h2>Additional Activities</h2>
+          <p>
+            Our excursion will take place on Saturday morning at the USF Riverfront Park. 
+            From 9am to 12pm, kayaks will be available to paddle on the river and spot wildlife, 
+            including the iconic Florida alligators. At 12pm, a picnic will be served to 
+            the guests. The park is a short 7 min ride from CMC, but we do not recommend walking 
+            there (i.e. don’t miss the ride). 
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <p>USF Cryptography Center</p>
+    <p>Applied Algebra Days · RTG in Applied Algebra</p>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RTG Application | USF Cryptography Center</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .rtg-subnav {
+      background: white;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .rtg-subnav-inner {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      padding: 0.95rem 0;
+      font-weight: 700;
+    }
+
+    .rtg-subnav-inner a {
+      color: var(--ink);
+      text-decoration: none;
+    }
+
+    .rtg-subnav-inner a:hover,
+    .rtg-subnav-inner a.active {
+      color: var(--green);
+    }
+
+    .application-hero {
+      min-height: 56vh;
+    }
+
+    .application-hero .hero-overlay {
+      background: linear-gradient(90deg, rgba(9,17,21,0.84), rgba(11,107,74,0.25));
+    }
+
+    .application-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin-top: 1.1rem;
+    }
+
+    .application-meta span {
+      display: inline-block;
+      padding: 0.4rem 0.8rem;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.14);
+      color: white;
+      font-weight: 700;
+      font-size: 0.92rem;
+      border: 1px solid rgba(255,255,255,0.18);
+    }
+
+    .intro-band {
+      background: linear-gradient(135deg, rgba(11,107,74,0.08), rgba(11,107,74,0.03));
+      border: 1px solid var(--line);
+      border-radius: 26px;
+      padding: 1.8rem;
+      box-shadow: 0 10px 28px rgba(15,27,36,0.05);
+    }
+
+    .eligibility-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.4rem;
+    }
+
+    .eligibility-card {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 1.35rem;
+      box-shadow: 0 10px 30px rgba(15,27,36,0.06);
+      height: 100%;
+    }
+
+    .eligibility-card h3 {
+      margin: 0 0 0.55rem;
+      font-size: 1.18rem;
+    }
+
+    .eligibility-card p {
+      margin: 0 0 0.8rem;
+      color: var(--muted);
+    }
+
+    .eligibility-card ul {
+      margin: 0;
+      padding-left: 1.15rem;
+      color: var(--muted);
+    }
+
+    .eligibility-card li {
+      margin-bottom: 0.4rem;
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1.2rem;
+    }
+
+    .process-step {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 1.3rem;
+      box-shadow: 0 10px 30px rgba(15,27,36,0.06);
+      height: 100%;
+    }
+
+    .step-number {
+      display: inline-flex;
+      width: 36px;
+      height: 36px;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      background: rgba(11,107,74,0.10);
+      color: var(--green);
+      font-weight: 800;
+      margin-bottom: 0.8rem;
+    }
+
+    .process-step h3 {
+      margin: 0 0 0.45rem;
+      font-size: 1.08rem;
+    }
+
+    .process-step p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .application-callout {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 1.5rem;
+      align-items: center;
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 1.5rem;
+      box-shadow: 0 10px 30px rgba(15,27,36,0.06);
+    }
+
+    .application-callout img {
+      width: 100%;
+      border-radius: 20px;
+      object-fit: cover;
+      aspect-ratio: 16 / 10;
+      box-shadow: 0 10px 30px rgba(15,27,36,0.08);
+    }
+
+    .application-callout h2 {
+      margin-top: 0;
+    }
+
+    .application-callout p {
+      color: var(--muted);
+    }
+
+    .application-note {
+      background: #fff;
+      border: 1px dashed var(--line);
+      border-radius: 20px;
+      padding: 1.1rem 1.2rem;
+      color: var(--muted);
+    }
+
+    @media (max-width: 1024px) {
+      .process-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .eligibility-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .application-callout {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .process-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header class="site-header compact">
+  <div class="container nav">
+    <a class="brand" href="index.html">
+      <img src="assets/images/logo-padlock.png" alt="USF Cryptography Center logo">
+      <span>USF Cryptography Center</span>
+    </a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="research.html">Research</a>
+      <a href="people.html">People</a>
+      <a href="programs.html">Programs</a>
+      <a href="rtg.html">RTG</a>
+      <a href="reu.html">REU</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero application-hero">
+  <img class="hero-image" src="assets/images/rtg-group.jpg" alt="RTG students, postdocs, and faculty at USF">
+  <div class="hero-overlay"></div>
+  <div class="container hero-content">
+    <div class="eyebrow">RTG in Applied Algebra</div>
+    <h1>How to apply to the RTG</h1>
+    <p class="lead">
+      The RTG in Applied Algebra welcomes applications and expressions of interest
+      from undergraduates, graduate students, and postdoctoral researchers.
+    </p>
+    <div class="hero-actions">
+      <a class="button primary" href="#apply">How to Apply</a>
+      <a class="button ghost" href="rtg-members.html">Meet the Community</a>
+    </div>
+  </div>
+</section>
+
+<section class="rtg-subnav">
+  <div class="container">
+    <nav class="rtg-subnav-inner">
+      <a href="rtg.html">Overview</a>
+      <a href="rtg-members.html">Members</a>
+      <a href="rtg-seminars.html">Seminars</a>
+      <a href="aad.html">Workshops</a>
+      <a href="rtg-application.html" class="active">Application</a>
+    </nav>
+  </div>
+</section>
+
+<main>
+  <section class="section">
+    <div class="container">
+      <div class="intro-band">
+        <p class="eyebrow green">Applying to the RTG</p>
+        <h2>A flexible entry point into the RTG ecosystem</h2>
+        <p>
+          The RTG in Applied Algebra is designed to support trainees at multiple stages,
+          from advanced undergraduates taking their first steps into research to postdoctoral
+          scholars developing independence and leadership. Because the RTG connects year-round
+          mentoring, seminars, workshops, and research activity, the application process is best
+          understood as an entry point into a larger research environment rather than a single isolated opportunity.
+        </p>
+        <p>
+          The page below is intended to clarify who the RTG is for, what kinds of preparation are helpful,
+          and how prospective participants can express interest and begin the application process.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow green">Who should apply?</p>
+        <h2>Multiple pathways into the RTG</h2>
+      </div>
+
+      <div class="eligibility-grid">
+        <div class="eligibility-card">
+          <h3>Postdoctoral Researchers</h3>
+          <p>
+            A strong fit for recent PhDs in mathematics, theoretical computer science,
+            or closely related areas connected to applied algebra.
+          </p>
+          <ul>
+            <li>PhD in a relevant field</li>
+            <li>Research alignment with RTG themes</li>
+            <li>Interest in mentoring and collaborative research</li>
+          </ul>
+        </div>
+
+        <div class="eligibility-card">
+          <h3>Graduate Students</h3>
+          <p>
+            Graduate applicants should have strong mathematical preparation and interest
+            in research areas such as algebra, number theory, coding theory, cryptography,
+            or quantum computing.
+          </p>
+          <ul>
+            <li>Background in advanced undergraduate mathematics</li>
+            <li>Preparation in areas such as algebra, analysis, or topology</li>
+            <li>Interest in research-driven training</li>
+          </ul>
+        </div>
+
+        <div class="eligibility-card">
+          <h3>Undergraduates</h3>
+          <p>
+            Advanced undergraduates interested in mathematics, theoretical computer science,
+            or related fields can use the RTG as a pathway into serious research activity.
+          </p>
+          <ul>
+            <li>Current undergraduate enrollment</li>
+            <li>Strong interest in mathematics or theory</li>
+            <li>Readiness to engage in seminars and mentoring</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="apply">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow green">How it works</p>
+        <h2>Application process</h2>
+        <p>
+          The process can remain lightweight at first and become more formal when there is a strong fit.
+        </p>
+      </div>
+
+      <div class="process-grid">
+        <div class="process-step">
+          <span class="step-number">1</span>
+          <h3>Express interest</h3>
+          <p>
+            Start by completing the interest form or contacting the RTG directly to indicate your level
+            of interest and stage of training.
+          </p>
+        </div>
+
+        <div class="process-step">
+          <span class="step-number">2</span>
+          <h3>Confirm fit</h3>
+          <p>
+            The RTG team reviews your background, research interests, and current stage to determine whether
+            the program is a good match.
+          </p>
+        </div>
+
+        <div class="process-step">
+          <span class="step-number">3</span>
+          <h3>Receive next steps</h3>
+          <p>
+            If appropriate, you will be contacted with information about the formal application procedure,
+            expectations, and available opportunities.
+          </p>
+        </div>
+
+        <div class="process-step">
+          <span class="step-number">4</span>
+          <h3>Join the community</h3>
+          <p>
+            Successful applicants become part of a broader ecosystem of mentoring, seminars, workshops,
+            and collaborative research.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <div class="application-callout">
+        <div>
+          <p class="eyebrow green">Next step</p>
+          <h2>Interest form</h2>
+          <p>
+            The first step is to complete the interest form. It should identify the level at which you
+            wish to apply and provide the information needed for the RTG team to follow up with you about
+            the formal application process.
+          </p>
+          <p>
+            This is the right place to begin whether you are applying as an undergraduate, graduate student,
+            or postdoctoral researcher.
+          </p>
+          <div class="hero-actions" style="margin-top: 1.2rem;">
+            <a class="button primary" href="https://usf.az1.qualtrics.com/jfe/form/SV_1MJbnsFHIgkpPUi">Interest Form</a>
+          </div>
+        </div>
+
+        <div>
+          <img src="assets/images/application.png" alt="Application form illustration">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="application-note">
+        Please update this page with any specific citizenship, residency, funding, or deadline language
+        you want stated explicitly. If opportunities differ by level or by year, that can also be clarified here
+        without changing the overall page structure.
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <p>USF Cryptography Center</p>
+    <p>NSF RTG in Applied Algebra at USF</p>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -6,37 +6,6 @@
   <title>RTG in Applied Algebra | USF Cryptography Center</title>
   <link rel="stylesheet" href="styles.css" />
   <style>
-    .rtg-subnav {
-      background: white;
-      border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-    }
-
-    .rtg-subnav-inner {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1.5rem;
-      padding: 0.95rem 0;
-      font-weight: 700;
-    }
-
-    .rtg-subnav-inner a {
-      color: var(--ink);
-      text-decoration: none;
-    }
-
-    .rtg-subnav-inner a:hover,
-    .rtg-subnav-inner a.active {
-      color: var(--green);
-    }
-
-    .rtg-page-hero {
-    min-height: 56vh;
-    }
-
-    .rtg-page-hero .hero-overlay {
-    background: linear-gradient(90deg, rgba(9,17,21,0.84), rgba(11,107,74,0.25));
-    }
     .rtg-hero .hero-overlay {
       background: linear-gradient(90deg, rgba(9,17,21,0.84), rgba(11,107,74,0.25));
     }
@@ -190,7 +159,7 @@
   </div>
 </header>
 
-<section class="hero rtg-page-hero">
+<section class="hero rtg-hero" style="min-height: 56vh;">
   <img class="hero-image" src="assets/images/rtg-group.jpg" alt="RTG students, postdocs, and faculty at USF">
   <div class="hero-overlay"></div>
   <div class="container hero-content">
@@ -201,12 +170,33 @@
       <strong>coding theory</strong>, and <strong>quantum computing</strong>
       for undergraduates, graduate students, and postdoctoral researchers.
     </p>
+    <p class="lead" style="max-width: 48rem;">
+      The RTG is designed for students and early-career researchers who want more than coursework:
+      real projects, close mentoring, seminar life, and a collaborative path into modern mathematical research.
+    </p>
     <div class="hero-actions">
       <a class="button primary" href="#opportunities">Explore Opportunities</a>
-      <a class="button ghost" href="#research">Research Areas</a>
+      <a class="button ghost" href="research.html">Research Areas</a>
     </div>
 
-   
+    <div class="rtg-at-a-glance">
+      <div class="rtg-glance-card">
+        <strong>3</strong>
+        <span>connected research pillars</span>
+      </div>
+      <div class="rtg-glance-card">
+        <strong>Year-round</strong>
+        <span>research, seminars, and mentoring</span>
+      </div>
+      <div class="rtg-glance-card">
+        <strong>Multi-level</strong>
+        <span>undergrad, graduate, and postdoc pathways</span>
+      </div>
+      <div class="rtg-glance-card">
+        <strong>Real community</strong>
+        <span>not just isolated projects</span>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -221,8 +211,6 @@
     </nav>
   </div>
 </section>
-
-
 
 <main>
 
@@ -267,7 +255,7 @@
   </div>
 </section>
 
-<section class="section section-alt" id="research">
+<section class="section section-alt">
   <div class="container">
     <div class="section-head">
       <p class="eyebrow green">Research directions</p>
