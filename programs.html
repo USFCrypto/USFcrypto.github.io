@@ -5,38 +5,481 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Programs | USF Cryptography Center</title>
   <link rel="stylesheet" href="styles.css" />
+  <style>
+    .programs-hero {
+      min-height: 58vh;
+    }
+
+    .programs-hero .hero-overlay {
+      background: linear-gradient(90deg, rgba(9,17,21,0.84), rgba(11,107,74,0.24));
+    }
+
+    .programs-intro {
+      background: linear-gradient(135deg, rgba(11,107,74,0.08), rgba(11,107,74,0.03));
+      border: 1px solid var(--line);
+      border-radius: 26px;
+      padding: 1.8rem;
+      box-shadow: 0 10px 28px rgba(15,27,36,0.05);
+    }
+
+    .pipeline-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1rem;
+      margin-top: 1.6rem;
+    }
+
+    .pipeline-card {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 1.15rem 1.2rem;
+      box-shadow: 0 10px 30px rgba(15,27,36,0.06);
+    }
+
+    .pipeline-card h3 {
+      margin: 0 0 0.45rem;
+      font-size: 1.05rem;
+    }
+
+    .pipeline-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.97rem;
+    }
+
+    .program-feature {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 1.5rem;
+      align-items: stretch;
+    }
+
+    .program-feature.reverse {
+      grid-template-columns: 0.95fr 1.05fr;
+    }
+
+    .program-copy,
+    .program-visual {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(15,27,36,0.06);
+    }
+
+    .program-copy {
+      padding: 1.6rem;
+    }
+
+    .program-copy h2 {
+      margin-top: 0;
+      margin-bottom: 0.6rem;
+    }
+
+    .program-copy p {
+      color: var(--muted);
+    }
+
+    .program-copy ul {
+      margin: 0.8rem 0 1.2rem;
+      padding-left: 1.2rem;
+      color: var(--muted);
+    }
+
+    .program-copy li {
+      margin-bottom: 0.45rem;
+    }
+
+    .program-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.85rem;
+      margin-top: 1.1rem;
+    }
+
+    .program-visual img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      aspect-ratio: 16 / 10;
+      display: block;
+    }
+
+    .subprogram-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.4rem;
+      margin-top: 1.4rem;
+    }
+
+    .subprogram-card {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 1.35rem;
+      box-shadow: 0 10px 30px rgba(15,27,36,0.06);
+      height: 100%;
+    }
+
+    .subprogram-card h3 {
+      margin: 0 0 0.45rem;
+      font-size: 1.12rem;
+    }
+
+    .subprogram-card p {
+      margin: 0 0 0.9rem;
+      color: var(--muted);
+    }
+
+    .subprogram-card a {
+      color: var(--green);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .outreach-band {
+      background: linear-gradient(135deg, rgba(11,107,74,0.08), rgba(11,107,74,0.03));
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 1.6rem;
+      box-shadow: 0 10px 30px rgba(15,27,36,0.05);
+    }
+
+    .quick-links-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1.2rem;
+      margin-top: 1.4rem;
+    }
+
+    .quick-link-card {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 1.15rem 1.2rem;
+      box-shadow: 0 10px 30px rgba(15,27,36,0.06);
+    }
+
+    .quick-link-card h3 {
+      margin: 0 0 0.4rem;
+      font-size: 1rem;
+    }
+
+    .quick-link-card p {
+      margin: 0 0 0.8rem;
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+
+    .quick-link-card a {
+      color: var(--green);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    @media (max-width: 1024px) {
+      .pipeline-grid,
+      .quick-links-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .subprogram-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .program-feature,
+      .program-feature.reverse {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .pipeline-grid,
+      .subprogram-grid,
+      .quick-links-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 <body>
-  <header class="site-header compact">
-    <div class="container nav">
-      <a class="brand" href="index.html">
-        <img src="assets/images/logo.png" alt="USF Cryptography Center logo" />
-        <span>USF Cryptography Center</span>
-      </a>
-      <nav>
-        <a href="research.html">Research</a>
-        <a href="people.html">People</a>
-        <a href="programs.html">Programs</a>
-      </nav>
+
+<header class="site-header compact">
+  <div class="container nav">
+    <a class="brand" href="index.html">
+      <img src="assets/images/logo-padlock.png" alt="USF Cryptography Center logo" />
+      <span>USF Cryptography Center</span>
+    </a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="research.html">Research</a>
+      <a href="people.html">People</a>
+      <a href="programs.html">Programs</a>
+      <a href="rtg.html">RTG</a>
+      <a href="reu.html">REU</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero programs-hero">
+  <img class="hero-image" src="assets/images/hero.jpg" alt="USF campus and research community" />
+  <div class="hero-overlay"></div>
+  <div class="container hero-content">
+    <div class="eyebrow">Programs & Opportunities</div>
+    <h1>Programs of the Center</h1>
+    <p class="lead">
+      The USF Cryptography Center supports a connected research ecosystem spanning
+      <strong>year-round training</strong>, <strong>summer undergraduate research</strong>,
+      <strong>seminars and workshops</strong>, and <strong>broader educational outreach</strong>.
+    </p>
+    <div class="hero-actions">
+      <a class="button primary" href="#rtg">Explore Flagship Programs</a>
+      <a class="button ghost" href="#seminars">Seminars &amp; Workshops</a>
     </div>
-  </header>
-  <main class="container content-page">
-    <p class="eyebrow green">Programs</p>
-    <h1>Training, seminars, and outreach</h1>
-    <div class="program-list">
-      <section id="rtg" class="program-item">
-        <h2>NSF RTG</h2>
-        <p>A flagship training program built around applied algebra, cryptography, coding theory, and computational mathematics.</p>
-      </section>
-      <section id="reu" class="program-item">
-        <h2>REU Site</h2>
-        <p>Summer opportunities for undergraduates to work on authentic research projects in cryptography and adjacent fields.</p>
-      </section>
-      <section id="outreach" class="program-item">
-        <h2>Education and Outreach</h2>
-        <p>Certificate initiatives, course support, and outreach programs designed to broaden access to modern cryptography and cybersecurity.</p>
-      </section>
+  </div>
+</section>
+
+<main>
+
+<section class="section">
+  <div class="container">
+    <div class="programs-intro">
+      <div class="section-head">
+        <p class="eyebrow green">How the pieces fit together</p>
+        <h2>One center, multiple entry points into research</h2>
+        <p>
+          The Center for Cryptographic Research is not built around a single activity.
+          It brings together research, mentoring, community, and public-facing education
+          through a set of connected programs. Students and visitors may first encounter
+          the center through a summer REU, a seminar talk, a workshop, an outreach initiative,
+          or the RTG in Applied Algebra, but these activities are designed to reinforce one another.
+        </p>
+      </div>
+
+      <div class="pipeline-grid">
+        <div class="pipeline-card">
+          <h3>Research Community</h3>
+          <p>Faculty, students, postdocs, and collaborators working across cryptography, coding theory, and quantum information.</p>
+        </div>
+        <div class="pipeline-card">
+          <h3>RTG</h3>
+          <p>A year-round training environment with vertically integrated mentoring and research activity.</p>
+        </div>
+        <div class="pipeline-card">
+          <h3>REU</h3>
+          <p>A summer entry point for undergraduates to participate in authentic research projects.</p>
+        </div>
+        <div class="pipeline-card">
+          <h3>Seminars & Outreach</h3>
+          <p>Recurring seminars, workshops, and educational initiatives that broaden participation and sustain community.</p>
+        </div>
+      </div>
     </div>
-  </main>
+  </div>
+</section>
+
+<section class="section section-alt" id="rtg">
+  <div class="container">
+    <div class="program-feature">
+      <div class="program-copy">
+        <p class="eyebrow green">Flagship Program</p>
+        <h2>NSF RTG in Applied Algebra</h2>
+        <p>
+          The RTG in Applied Algebra is the center’s flagship training initiative.
+          It brings together undergraduates, graduate students, postdoctoral researchers,
+          and faculty in a sustained research community organized around cryptography,
+          coding theory, quantum computing, and neighboring areas of applied algebra.
+        </p>
+        <p>
+          Rather than functioning as a stand-alone fellowship page, the RTG anchors a broader
+          ecosystem that includes seminars, workshops, collaborative mentoring, and visible
+          connections to the center’s research mission.
+        </p>
+        <ul>
+          <li>Year-round research training and mentoring</li>
+          <li>Vertically integrated community across career stages</li>
+          <li>Seminars, workshops, and research-facing programming</li>
+          <li>Opportunities for undergraduates, graduate students, and postdocs</li>
+        </ul>
+        <div class="program-actions">
+          <a class="button primary" href="rtg.html">RTG Overview</a>
+          <a class="button ghost" href="rtg-application.html">Application Information</a>
+        </div>
+      </div>
+
+      <div class="program-visual">
+        <img src="assets/images/rtg-group.jpg" alt="RTG students, postdocs, and faculty at USF" />
+      </div>
+    </div>
+
+    <div class="subprogram-grid">
+      <article class="subprogram-card">
+        <h3>RTG Overview</h3>
+        <p>Learn how the RTG is structured, what research areas it supports, and how it fits into the broader center.</p>
+        <a href="rtg.html">Go to RTG Overview</a>
+      </article>
+
+      <article class="subprogram-card">
+        <h3>Members</h3>
+        <p>Meet the faculty, trainees, and collaborators who make up the RTG community in applied algebra at USF.</p>
+        <a href="rtg-members.html">View RTG Members</a>
+      </article>
+
+      <article class="subprogram-card">
+        <h3>Application</h3>
+        <p>Find current guidance for undergraduates, graduate students, and postdoctoral applicants interested in the RTG.</p>
+        <a href="rtg-application.html">See Application Page</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="reu">
+  <div class="container">
+    <div class="program-feature reverse">
+      <div class="program-visual">
+        <img src="assets/images/reu-group.jpg" alt="REU students group photo" />
+      </div>
+
+      <div class="program-copy">
+        <p class="eyebrow green">Summer Research</p>
+        <h2>REU Site in Cryptography and Coding Theory</h2>
+        <p>
+          The REU Site provides an entry point for undergraduates to join the center’s
+          research environment through a summer program built around authentic projects,
+          close faculty mentoring, seminars, and professional development.
+        </p>
+        <p>
+          The REU complements the RTG by broadening access to research and helping students
+          move from coursework into mathematical and cryptographic investigation in a structured,
+          collaborative setting.
+        </p>
+        <ul>
+          <li>Summer undergraduate research experience</li>
+          <li>Faculty mentoring and collaborative project work</li>
+          <li>Training in cryptography, coding theory, and adjacent areas</li>
+          <li>Preparation for graduate study and research-oriented careers</li>
+        </ul>
+        <div class="program-actions">
+          <a class="button primary" href="reu.html">REU Overview</a>
+          <a class="button ghost" href="reu-projects.html">Past Projects</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" id="seminars">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow green">Seminars &amp; Workshops</p>
+      <h2>Recurring events that sustain the center’s intellectual life</h2>
+      <p>
+        In addition to formal training programs, the center supports recurring events that
+        bring together faculty, trainees, and visitors around active topics in cryptography,
+        coding theory, quantum computing, and applied algebra.
+      </p>
+    </div>
+
+    <div class="subprogram-grid">
+      <article class="subprogram-card">
+        <h3>Applied Algebra Seminar</h3>
+        <p>A regular seminar series supporting the RTG’s research culture through expository and research-oriented talks.</p>
+        <a href="rtg-seminars.html">View Seminar Page</a>
+      </article>
+
+      <article class="subprogram-card">
+        <h3>Applied Algebra Days</h3>
+        <p>A workshop series at USF connecting researchers and trainees across cryptography, coding theory, quantum computing, and related areas.</p>
+        <a href="aad.html">Visit Workshop Series</a>
+      </article>
+
+      <article class="subprogram-card">
+        <h3>Current Workshop Edition</h3>
+        <p>Browse the current Applied Algebra Days edition, including program, practical information, and contact details.</p>
+        <a href="aad-home.html">Current Edition</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="outreach">
+  <div class="container">
+    <div class="outreach-band">
+      <div class="section-head">
+        <p class="eyebrow green">Education &amp; Outreach</p>
+        <h2>Broadening access to cryptography and cybersecurity</h2>
+        <p>
+          The center’s activities extend beyond formal research programs. Educational and
+          outreach efforts help introduce broader communities to modern cryptography,
+          support local and regional engagement, and create additional pathways into the field.
+        </p>
+      </div>
+
+      <div class="subprogram-grid">
+        <article class="subprogram-card">
+          <h3>Student Pathways</h3>
+          <p>Programs and initiatives that help students move from coursework into research participation and research communities.</p>
+        </article>
+
+        <article class="subprogram-card">
+          <h3>Community-Facing Education</h3>
+          <p>Public-facing activities, instructional resources, and events that make contemporary cryptography more accessible.</p>
+        </article>
+
+        <article class="subprogram-card">
+          <h3>Broadening Participation</h3>
+          <p>Efforts aligned with the center’s mission to expand access to research and training opportunities in cybersecurity and cryptography.</p>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow green">Quick Links</p>
+      <h2>Start from the page that fits your role</h2>
+    </div>
+
+    <div class="quick-links-grid">
+      <article class="quick-link-card">
+        <h3>Prospective RTG Student</h3>
+        <p>See the RTG overview and current application guidance.</p>
+        <a href="rtg-application.html">RTG Application</a>
+      </article>
+
+      <article class="quick-link-card">
+        <h3>Prospective REU Applicant</h3>
+        <p>Learn what the REU offers and the kind of projects students work on.</p>
+        <a href="reu.html">REU Overview</a>
+      </article>
+
+      <article class="quick-link-card">
+        <h3>Visitor or Seminar Speaker</h3>
+        <p>Browse the seminar page and workshop series for current activity.</p>
+        <a href="rtg-seminars.html">Seminars</a>
+      </article>
+
+      <article class="quick-link-card">
+        <h3>Current Edition Attendee</h3>
+        <p>Go directly to the current Applied Algebra Days pages.</p>
+        <a href="aad-home.html">Workshop Info</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <p>USF Cryptography Center</p>
+    <p>Research, training, seminars, and outreach in modern cryptography.</p>
+  </div>
+</footer>
+
 </body>
 </html>
