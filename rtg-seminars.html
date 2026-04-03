@@ -307,21 +307,21 @@
       <div class="schedule-wrap">
 
         <div class="term-card">
-          <button class="term-header" type="button" aria-expanded="true" aria-controls="term-fall-25">
+          <button class="term-header" type="button" aria-expanded="false" aria-controls="term-fall-25">
             <span class="term-label">Fall 2025</span>
-            <span class="term-symbol">−</span>
+            <span class="term-symbol">+</span>
           </button>
-          <div class="term-body" id="term-fall-25">
+          <div class="term-body" id="term-fall-25" hidden>
 
             <div class="talk-item">
-              <button class="talk-toggle" type="button" aria-expanded="true" aria-controls="talk-code-based">
-                <span class="talk-symbol">−</span>
+              <button class="talk-toggle" type="button" aria-expanded="false" aria-controls="talk-code-based">
+                <span class="talk-symbol">+</span>
                 <div class="talk-heading">
                   <div class="talk-title">Code-Based Cryptography</div>
-                  <div class="talk-speaker">Freeman Slaughter</div>
+                  <div class="talk-speaker">F. Slaughter</div>
                 </div>
               </button>
-              <div class="talk-details" id="talk-code-based">
+              <div class="talk-details" id="talk-code-based" hidden>
                 <p>
                   This mini-series introduces the basics of code-based cryptography and the
                   mathematical background needed to understand modern digital signature constructions.
@@ -338,13 +338,22 @@
                 <span class="talk-symbol">+</span>
                 <div class="talk-heading">
                   <div class="talk-title">The Code Equivalence Problem</div>
-                  <div class="talk-speaker">Alexandra Veliche Hostetler</div>
+                  <div class="talk-speaker">A. Veliche Hostetler</div>
                 </div>
               </button>
               <div class="talk-details" id="talk-code-equivalence" hidden>
                 <p>
-                  Add description, dates, and location details here.
+                  This mini-series introduces the different variants of the Code 
+                  Equivalence Problem (permutation CE, signed PCE, Linear CE), and shows the various 
+                  reductions between them. It will also show reductions between the Code Equivalence 
+                  Problem and the Graph Isomorphism problem, as well as the Lattice Isomorphism Problem. 
+                  It will introduce cryptosystems based on the Code Equivalence Problem, and the Lattice 
+                  Isomorphism Problem, and it  will discuss their security. 
                 </p>
+                <ul>
+                  <li><strong>Friday September 26th at 4pm in CMC 120:</strong> different variants of the Code Equivalence Problem, and the reductions between them.</li>
+                  <li><strong>Friday October 3rd at 4pm in CMC 120:</strong> cryptosystems based on the Code Equivalence Problem (LESS) and on LIP (HAWK).</li>
+                </ul>
               </div>
             </div>
 
@@ -358,8 +367,14 @@
               </button>
               <div class="talk-details" id="talk-isogenies" hidden>
                 <p>
-                  Add description, dates, and location details here.
+                  This mini-series will present the basics of isogenies between elliptic curves over finite fields. 
+                  The hardness of computing isogenies will be discussed, as well as the hardness of computing 
+                  isogenies between two given curves. Finally, we will review the various constructions of isogeny-based cryptosystems. 
                 </p>
+                <ul>
+                  <li><strong>Friday October 24th @4pm in CMC 120:</strong> definition of isogenies. Case of supersingular curve. Properties of the isogeny graph (Wissam). </li>
+                  <li><strong>Friday October 31st @4pm in CMC120:</strong> cryptosystems based on isogenies: hash function, SIDH, CSIDH, SQIsign (J.-F.). </li>
+                </ul>
               </div>
             </div>
 
@@ -373,8 +388,12 @@
               </button>
               <div class="talk-details" id="talk-ldpc" hidden>
                 <p>
-                  Add description, dates, and location details here.
+                  This mini-series will present the basics of classical and quantum Low Density Parity Check (LDPC) codes. 
                 </p>
+                <ul>
+                  <li><strong>Friday November 14th @4pm in CMC120:</strong> classical LDPC codes (Anthony). </li>
+                  <li><strong>Friday November 21st @4pm in CMC120:</strong> quantum error correcting codes, Quantum LDPC codes (Tefjol). </li>
+                </ul>
               </div>
             </div>
 
@@ -383,13 +402,20 @@
                 <span class="talk-symbol">+</span>
                 <div class="talk-heading">
                   <div class="talk-title">Generic Group Model, Classical and Quantum</div>
-                  <div class="talk-speaker">Aaram Yun</div>
+                  <div class="talk-speaker">A. Yun</div>
                 </div>
               </button>
               <div class="talk-details" id="talk-generic-group" hidden>
                 <p>
-                  Add description, dates, and location details here.
+                  This mini-series will introduce the generic group model, and discuss 
+                  generic algorithms (those algorithms agnostic to specific group encodings used) 
+                  and generic lower bounds of various group-based problems including the discrete 
+                  logarithm problem.  He will also talk about quantum generic optimality of Shor’s algorithm for DLP.
                 </p>
+                <ul>
+                  <li><strong>Friday December 5th @4pm in CMC120:</strong> generic group model, proving hardness in GGM, DLP and its variants.. </li>
+                  <li><strong>Friday December 12th @4pm in CMC120:</strong> Shor’s quantum algorithm for DLP, and its optimality. </li>
+                </ul>
               </div>
             </div>
 
@@ -397,23 +423,48 @@
         </div>
 
         <div class="term-card">
-          <button class="term-header" type="button" aria-expanded="false" aria-controls="term-spring-26">
+          <button class="term-header" type="button" aria-expanded="true" aria-controls="term-spring-26">
             <span class="term-label">Spring 2026</span>
-            <span class="term-symbol">+</span>
+            <span class="term-symbol">−</span>
           </button>
-          <div class="term-body" id="term-spring-26" hidden>
+          <div class="term-body" id="term-spring-26">
             <div class="talk-item">
-              <button class="talk-toggle" type="button" aria-expanded="false" aria-controls="talk-spring-placeholder">
+              <button class="talk-toggle" type="button" aria-expanded="false" aria-controls="talk-LIP-Construction-A">
                 <span class="talk-symbol">+</span>
                 <div class="talk-heading">
-                  <div class="talk-title">Spring Series Placeholder</div>
-                  <div class="talk-speaker">Speaker(s) TBD</div>
+                  <div class="talk-title">Lattice Isomorphism Problem between Construction A lattices</div>
+                  <div class="talk-speaker">J.-F. Biasse</div>
                 </div>
               </button>
-              <div class="talk-details" id="talk-spring-placeholder" hidden>
+              <div class="talk-details" id="talk-LIP-Construction-A" hidden>
                 <p>
-                  Add the spring schedule here when ready.
+                  This mini-series shows how to solve the Lattice Isomorphism Problem (LIP) between lattices that arise as construction A of a linear code. 
+                  This work builds on a prior result of Ducas and Gibbons who proved how to outperform the general Haviv and Regev method when the lattices are 
+                  Construction A of codes with trivial hull. 
                 </p>
+                  <ul>
+                  <li><strong>Thursday February 26th @4pm in CMC130:</strong> Lattice Isomorphism Problem, Code Equivalence Problem. </li>
+                  <li><strong>Thursday March 5th @4pm in CMC130:</strong> Solving LIP between construction A lattices. </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="talk-item">
+              <button class="talk-toggle" type="button" aria-expanded="false" aria-controls="talk-APN">
+                <span class="talk-symbol">+</span>
+                <div class="talk-heading">
+                  <div class="talk-title">APN functions as building blocks of block ciphers</div>
+                  <div class="talk-speaker">L. Koelsch and D. Vaghasiya </div>
+                </div>
+              </button>
+              <div class="talk-details" id="talk-APN" hidden>
+                <p>
+                  This mini-series .... add description. 
+                </p>
+                  <ul>
+                  <li><strong>Thursday March 26th @4pm in CMC130:</strong> APN functions and block cipher design. </li>
+                  <li><strong>Thursday April 2nd @4pm in CMC130:</strong> Bent functions. </li>
+                </ul>
               </div>
             </div>
           </div>
@@ -422,9 +473,7 @@
       </div>
 
       <div class="archive-note" style="margin-top: 1.4rem;">
-        As the seminar grows, this page can also serve as a light archive by semester,
-        making it easy for prospective students and visitors to see the range of topics
-        covered by the RTG.
+        In addition to the regular seminar, participants gather about once a month for an informal dinner at World of Beer.
       </div>
     </div>
   </section>
@@ -456,8 +505,7 @@
         <div class="seminar-info-card">
           <h3>Location and time</h3>
           <p>
-            Add the regular day/time/location here if you want this page to function as the primary
-            seminar information page for visitors.
+            Spring 2026: The seminar meets on Thursdays in CMC 130 at 4pm.
           </p>
         </div>
       </div>
