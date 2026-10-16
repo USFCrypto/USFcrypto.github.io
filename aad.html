@@ -99,6 +99,10 @@
       gap: 1.4rem;
     }
 
+    #archive .aad-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
     .aad-card {
       background: white;
       border: 1px solid var(--line);
@@ -178,6 +182,7 @@
 
     @media (max-width: 640px) {
       .aad-grid,
+      #archive .aad-grid,
       .series-grid {
         grid-template-columns: 1fr;
       }
@@ -296,17 +301,16 @@
     <div class="aad-current">
       <div class="aad-current-grid">
         <div>
-          <h3 style="font-size: 1.8rem; margin-bottom: 0.5rem;">Applied Algebra Days #4</h3>
+          <h3 style="font-size: 1.8rem; margin-bottom: 0.5rem;">Applied Algebra Days #5</h3>
           <p>
             The upcoming edition of the AAD will feature talks and activities at the intersection of
             cryptography, coding theory, and quantum computing, with an emphasis on bringing
-            together researchers across fields and career stages. It will interesect with our REU Site program, and 
-            the research themes featured will overlap with the projects offered this summer.
+            together researchers across fields and career stages. It is organized by the crypto group of Florida Atlantic University.
           </p>
 
           <div class="aad-meta">
-            <span>June 10-12 2026</span>
-            <span>University of South Florida</span>
+            <span>October 17-18 2026</span>
+            <span>Florida Atlantic University</span>
             <span>RTG Workshop Series</span>
           </div>
 
@@ -344,30 +348,40 @@
 
     <div class="aad-grid">
       <article class="aad-card">
+        <h3>Applied Algebra Days #4</h3>
+        <div class="meta">June 10–12, 2026 · USF</div>
+        <p>
+          Talks on coding theory, post-quantum cryptography, and related areas of applied algebra,
+          held alongside the Summer 2026 REU Site program.
+        </p>
+        <a href="aad_old/aad-4-program.html">View archived program →</a>
+      </article>
+
+      <article class="aad-card">
         <h3>Applied Algebra Days #3</h3>
         <div class="meta">February 4–7, 2026 · USF</div>
         <p>
           This was a special edition of the AAD in honor of Daniele Bartoli's 40th birthday.
         </p>
-        <a href="aad-3.html">View archived program →</a>
+        <a href="aad_old/aad-3-program.html">View archived program →</a>
       </article>
 
       <article class="aad-card">
         <h3>Applied Algebra Days #2</h3>
-        <div class="meta">Fall 2025 · USF</div>
+        <div class="meta">October 11–12, 2025 · Florida Atlantic University</div>
         <p>
           This edition took place at Florida Atlantic University. 
         </p>
-        <a href="aad-2.html">View archived program →</a>
+        <a href="aad_old/aad-2-program.html">View archived program →</a>
       </article>
 
       <article class="aad-card">
         <h3>Applied Algebra Days #1</h3>
-        <div class="meta">Spring 2025 · USF</div>
+        <div class="meta">June 19–21, 2025 · USF</div>
         <p>
-          The first edition of the series. It overlapped with the Summer 2025 of our REU Site program.
+          The first edition of the series, held alongside the Summer 2025 REU Site program.
         </p>
-        <a href="aad-1.html">View archived program →</a>
+        <a href="aad_old/aad-1-program.html">View archived program →</a>
       </article>
     </div>
   </div>
