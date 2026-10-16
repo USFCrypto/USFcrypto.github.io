@@ -73,6 +73,15 @@
       border-radius: 22px;
       padding: 1.2rem 1.3rem;
     }
+    .venue-map-link {
+      color: var(--green);
+      text-decoration: underline;
+      text-underline-offset: 0.15em;
+    }
+    .venue-map-link:hover,
+    .venue-map-link:focus-visible {
+      color: var(--green-dark);
+    }
   </style>
 </head>
 <body>
@@ -129,7 +138,7 @@
       <div class="program-note">
         <strong>Venue:</strong> Talks will take place in <strong>SE 319B</strong> in
         FAU’s Science Building (SE-43), Boca Raton campus.<br>
-        <a href="https://maps.app.goo.gl/ZqfEjoJg8dQBjYRk6">Science Building (SE-43) on Google Maps</a>.
+        <a class="venue-map-link" href="https://maps.app.goo.gl/ZqfEjoJg8dQBjYRk6">Science Building (SE-43) on Google Maps</a>.
       </div>
 
       <div class="program-day">
